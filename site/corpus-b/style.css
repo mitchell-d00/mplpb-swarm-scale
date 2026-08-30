@@ -1,0 +1,11 @@
+/* Swarm MPLPB demo corpora. Deliberately plain: the corpus is the
+   artifact, and a stylesheet that mattered would be a dependency. */
+body { font: 16px/1.55 Georgia, 'Times New Roman', serif; color: #12171c;
+       max-width: 42rem; margin: 3rem auto; padding: 0 1.25rem; }
+h1 { font-size: 1.5rem; border-bottom: 1px solid #d3dae1; padding-bottom: .4rem; }
+h2 { font-size: 1.1rem; margin-top: 1.8rem; }
+code { background: #eff2f4; padding: .1em .35em; border-radius: 3px;
+       font: .9em ui-monospace, Menlo, Consolas, monospace; }
+nav.back { margin-top: 2.5rem; padding-top: .8rem; border-top: 1px solid #d3dae1;
+           font-size: .9rem; color: #5a6672; }
+dl dt { font-weight: bold; margin-top: .7rem; }
