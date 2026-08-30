@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swarm-mplpb"
+version = "3.0.0"
+description = "Reference implementation of MPLPB-SWARM-013 v3: concurrency, federation, provenance depth, and deployment profiles for an MPLPB local web."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Mitchell D. McPhetridge" }]
+keywords = ["mplpb", "local-web", "provenance", "federation", "swarm", "retrieval", "stateless-ai", "helpdesk", "agents"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Text Processing :: Indexing",
+]
+dependencies = []
+
+[project.optional-dependencies]
+docs = ["reportlab>=4"]
+
+[project.urls]
+Homepage = "https://github.com/mitchell-d00/SWARM-MPLPB-Concurrent-Writers-and-Federated-Corpora"
+Issues = "https://github.com/mitchell-d00/SWARM-MPLPB-Concurrent-Writers-and-Federated-Corpora/issues"
+
+[project.scripts]
+mplpb-swarm = "mplpb_swarm.__main__:main"
+
+[tool.setuptools]
+packages = ["mplpb_swarm"]

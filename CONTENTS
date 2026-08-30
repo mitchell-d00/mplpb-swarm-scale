@@ -1,0 +1,9 @@
+Swarm MPLPB — MPLPB-SWARM-013 v3
+
+docs/            the paper, in md, txt, and pdf
+docs/superseded/ three drafts this consolidates, retained not deleted
+mplpb_swarm/     crawl, lease, supersede, origin, registry, health, cite, profiles
+site/            three demo corpora and their registry
+ablation/        pre-registrations, hashes, and results for both runs
+tests/           145 tests, standard library, no network
+tools/           site builder, paper renderer, ablation harness
