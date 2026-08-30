@@ -1,0 +1,568 @@
+Category: Specification / Architecture
+Subcategory: Knowledge Infrastructure / Concurrency, Federation, and Deployment
+Document ID: MPLPB-SWARM-013
+Last Updated: 2026-08-30T16:00Z v3
+Owner: Mitchell D. McPhetridge, Independent Researcher
+Status: current
+Supersedes: MPLPB-SWARM-013 v1.2 (2026-08-30T15:25Z); MPLPB-SWARM-013 v1.1 (2026-08-30T14:30Z); MPLPB-SWARM-013 v1 (2026-08-30T00:00Z); MPLPB-DEPLOY-015 v1 (2026-08-30T15:20Z); MPLPB-TEST-014 v2 (2026-08-30T15:10Z); MPLPB-TEST-014 v1 (2026-08-30T14:30Z)
+
+---
+
+# MPLPB at Swarm and Enterprise Scale
+
+### Concurrent Writers, Federated Corpora, Deployment Profiles, and What the Ablation Measured
+
+Mitchell D. McPhetridge
+Independent Researcher
+
+---
+
+| Field | Value |
+| --- | --- |
+| Document ID | MPLPB-SWARM-013 |
+| Category | Specification / Architecture |
+| Subcategory | Knowledge Infrastructure / Concurrency, Federation, and Deployment |
+| Updated | 2026-08-30T16:00Z v3 |
+| Owner | Mitchell D. McPhetridge, Independent Researcher |
+| Status | current |
+| Scope | What breaks when an MPLPB corpus is read and written by many actors at once; the write discipline, provenance class, and federation rules that contain it; what four named deployments are permitted to serve and to write; and the measured retrieval evidence for and against the structure claim |
+| When to use | Deploying MPLPB where more than one writer is active; running agents that write back to a corpus they read; federating corpora under shared routing; configuring an assistant for a research group, staff, or customers; assessing what the ablation has established |
+| Supersedes | v1, v1.1, v1.2; MPLPB-DEPLOY-015 v1; MPLPB-TEST-014 v1 and v2. All retained under `docs/superseded/` |
+
+**Related.** MPLPB as a Local Web (MPLPB-LOCAL-008 v4 · current) — the corpus specification and the single-writer assumptions this paper drops. Smart Local MPLPB (MPLPB-SMART-011 v1 · current) — the reader, its mode controller, and the teaching loop put here under concurrency. MPLPB and the Cost of Visibility (MPLPB-COST-012 v2 · current) — the cost model whose amortization condition §9 bounds, and the §2.1 capability table §11 tests. MPLPB Separation & Precedence (MPLPB-SEP-007) — the declared-scope routing rule, applied here one level up.
+
+**Implementation.** Swarm MPLPB — reference implementation of this document. Writer leases with fencing, supersession linearization, origin-depth gating, corpus registry, health metrics, four deployment profiles, and the full ablation harness. 144 tests, standard library only, no network.
+
+**Back to.** Main Index > Specification / Architecture Sub-Index
+
+---
+
+## Abstract
+
+Three prior documents specify a corpus, a reader, and an economics. All three assume one writer.
+
+MPLPB-LOCAL-008 describes supersession in the singular — retire, replace, log — and a sequence has one actor. MPLPB-SMART-011 specifies a front end that refuses to answer from anything but a retrieved page, and can be taught, which is a write path exercised by one person at a keyboard. MPLPB-COST-012 argues that structural work at publication amortizes across downstream retrievals, on the stated condition that the corpus is read far more often than it is revised.
+
+Each assumption is right at the scale it was written for. None survives many actors.
+
+This document specifies what changes when a corpus is read and written concurrently, when several corpora must be routed between under one authority, and when the audience is no longer the author. It names fifteen failure modes, most invisible to every check the prior specifications supply, and gives the write discipline, provenance class, federation rules, and deployment profiles that make them detectable or preventable.
+
+Its central mechanism is a provenance class. A reader that refuses to answer without retrieval stops one actor improvising. It does not stop a population, because an actor that improvises and then teaches the corpus converts an unsourced assertion into a document carrying an identifier, a declared scope, a status, and accurate provenance — after which a second actor retrieves it legitimately and the invention is indistinguishable from a finding. Validation cannot catch this: validation reads structure, and the structure is impeccable. What is available is to count the machine generations a claim has passed through, expose that count in every citation, and refuse to let the chain run unattended past a threshold. That counter is also what allows an organisation to state that no machine-authored page reaches a customer and have the statement be checkable.
+
+Its central admission is economic. The amortization argument requires that reads greatly exceed revisions. A swarm scales both together, so the ratio is invariant in the number of agents; and where taught writes require human ratification, that cost does not amortize at all. The ceiling on this architecture is human attention, and §9 locates it rather than assuming it away.
+
+Its evidence is a retrieval experiment, reported in §11 with its limits stated. Declared trigger text makes pages retrievable by query vocabulary absent from their prose, at 79.2% against 0.0% for the same prose stripped of structure, surviving dilution to one relevant word in three. The same experiment shows that advantage vanishing entirely under one plausible ranker setting, and shows sub-index pages outranking the pages they index. It does not close the ablation that has been open since MPLPB-LOCAL-008 §14, and §13.5 says why.
+
+---
+
+## 1. What Scale Changes
+
+The prior specifications are correct within their declared scope and silently assume four things outside it.
+
+**One writer.** Supersession is written as a sequence. Two actors performing that sequence against the same identifier produce two replacements, both valid, both current, both claiming the same predecessor.
+
+**Human-paced revision.** MPLPB-COST-012 §9 observes that its argument holds when `n >> m`. At human pace that is comfortable. At machine pace it is an open question, and §9 below answers it unfavourably.
+
+**One corpus root.** Bounded traversal rejects links outside the declared root, which is what keeps a crawl finite and a corpus identifiable. It says nothing about a second root that could answer the same question.
+
+**A trustworthy writer.** The teaching loop writes a validating, superseding, cited document. It validates structure. It cannot validate that whoever taught it knew anything.
+
+Dropping these produces three distinct problems, and conflating them is the first available mistake.
+
+---
+
+## 2. Three Scales, Three Different Failures
+
+**Swarm scale is a concurrency problem.** Many agents, one organisation, one corpus, machine-paced reads and writes. What breaks is write ordering, identifier allocation, and the integrity of the provenance chain. Nothing about authority is contested; everything about sequence is.
+
+**Enterprise scale is a federation and authority problem.** Many authors, many corpora, governance, classification, audit. What breaks is routing between corpora with overlapping declared scopes, provenance across corpus boundaries, and the gap between a retrieval filter and an authorization decision. Concurrency is present but is not the hard part; the hard part is two corpora both credibly claiming a question.
+
+**Service scale is an audience problem.** The reader is no longer the author. A research group reading its own corpus tolerates a wrong retrieval because somebody would notice. A customer does not notice, and cannot. What breaks is the assumption that a wrong answer is cheap.
+
+The three compose badly if treated as one. A distributed lock does not tell you which corpus owns a question, declared-scope precedence does not stop two agents writing the same identifier, and neither says whether a machine-authored page should reach a customer. Sections 4 and 5 address the first, 6 and 7 the second, 10 the third. Section 9 addresses the cost consequence of all three.
+
+---
+
+## 3. The Constraint Does Not Survive, and That Is Fine
+
+MPLPB-COST-012 §3 declares a constraint — consumer hardware, consumer front ends, no author-operated retrieval infrastructure, no commercial visibility tooling — and calls it the central evidentiary asset.
+
+At enterprise scale that constraint does not hold, and pretending otherwise would be the quiet dishonesty this framework exists to make difficult.
+
+An enterprise deployment needs determinism, freshness guarantees, access control, and low-latency retrieval over a large corpus. MPLPB-COST-012 §2.2 lists those four as properties the public form does not supply. They are not oversights to be engineered around; they are why the expensive stack exists.
+
+**What is lost.** The cost result. It is a statement about an individual author's cost under a declared no-paid-infrastructure rule. It does not transfer to a deployment running a vector store, an identity provider, and a retrieval service. Citing the cost paper in support of an enterprise MPLPB deployment is citing it outside its declared scope, which is the failure the framework's own precedence rule exists to prevent.
+
+**What carries over.** The artifact discipline. Complete artifacts, declared identity and scope, enforced supersession, provenance that travels with retrieved text, typed relationships, and a reader that refuses rather than confabulates. None depend on who pays for the index. They are properties of how the corpus is authored, available whether retrieval is FTS5 in a laptop's memory or a managed cluster.
+
+The constraint was an evidentiary device, not a virtue. Its job was to make a disclosure auditable by a stranger: run the implementation with the network off and see whether anything undisclosed does the work. That job is done. Having done it, the architecture is free to be deployed on infrastructure the constraint would have forbidden, provided nobody claims the constraint's evidence while doing so.
+
+---
+
+## 4. Concurrent Write Discipline
+
+The swarm write problem is old and the solutions are boring. The correct move is to use a boring one and say so, rather than build something interesting that fails in ways nobody has characterised.
+
+### 4.1 Identifiers are allocated, not chosen
+
+MPLPB-LOCAL-008 §11.3 makes duplicate identifiers a validator failure, which is a detection rather than a prevention. Two agents each choosing `OPS-NOTE-014` produce a failure after both pages exist.
+
+An agent requests an identifier for a spoke and receives one. It does not construct one from a prefix and a count it read a moment ago. Allocation is serialised by the same lease that serialises writes, so the counter is only advanced by the current holder, and the fence is taken before the counter moves so a stale writer cannot consume an identifier it will not be allowed to use.
+
+This is deliberately unclever. It costs one file write and removes a failure class.
+
+### 4.2 Supersession is linearizable per identifier
+
+A supersession fork is two documents, both `status: current`, both naming the same predecessor. Both are structurally valid, and no check among the eight in MPLPB-LOCAL-008 §11 compares supersession claims across documents.
+
+The corpus is then ambiguous about its own history, durably: a reader asking what replaced the predecessor gets two answers of equal standing and no rule decides between them.
+
+Under a lease, a writer reads the current head for an identifier, writes its replacement, and advances the head. A writer whose lease expired between reading and writing is rejected at the write, not at the read — which is what the fencing token in §4.3 is for. Forks remain detectable after the fact and the implementation checks for them, because a discipline with no detector is a hope.
+
+### 4.3 Writer leases carry fencing tokens
+
+A lease is a file naming a spoke, an owner, an expiry, and a monotonically increasing token. Acquiring means writing that file when no unexpired lease exists. Writing to the spoke means presenting a token at least as large as the one the spoke last accepted.
+
+The token is the part usually omitted and the part that matters. Expiry alone is insufficient: a writer can acquire a lease, stall past expiry, have a second writer acquire it, then wake and complete a write it believed was authorised. The token makes that fail at the point of writing.
+
+Granularity is the spoke, because the spoke is the unit of declared scope and therefore the unit carrying cross-document structure. Locking per document would permit two agents to write the same spoke's index concurrently.
+
+### 4.4 What is deliberately absent
+
+No consensus protocol, no CRDTs, no distributed transactions.
+
+The justification is a claim about workload and should be stated as one so it can be wrong. Corpus writes are expected to be rare relative to reads even in a swarm, because a corpus written as often as it is read is not functioning as a reference — see §9.3, where that condition is the economic failure case. A coarse lease with a fencing token is adequate for rare writes, auditable by reading one file, and requires no service.
+
+A deployment finding leases contended enough to matter has learned something more interesting than the lock: the corpus is being used as a message bus, and the architecture is the wrong one.
+
+---
+
+## 5. Epistemic Laundering
+
+This is the failure the rest of the document is arranged around.
+
+### 5.1 The mechanism
+
+MPLPB-SMART-011 §2 establishes an asymmetry: a front end that occasionally says *I don't have that* is mildly annoying, and one that occasionally invents a confident answer is corrosive. Every shipped mode therefore carries `answer_without_retrieval: false`.
+
+That governs one reader answering one question. It does not govern what happens next.
+
+1. An actor is asked something the corpus does not cover.
+2. It answers from prior knowledge — the model bypass, FM-L8.
+3. It teaches the corpus that answer.
+4. The teaching loop does its job correctly: the page validates and carries an identifier, declared scope, timestamp, status, and citation.
+5. A second actor asks a related question, retrieves the page, and answers from it — with provenance, under `answer_without_retrieval: false`, entirely within the rules.
+
+At step 5 the corpus is being consulted properly and the answer is invented. Every structural check passes. The provenance is accurate: the page exists, is current, is local, and says what it is quoted as saying. What provenance does not record is that its content was never retrieved from anything.
+
+Call this laundering, because that is what it is. The discipline is not malfunctioning; it is functioning, on input it cannot inspect.
+
+### 5.2 Why validation cannot fix it
+
+The eight structural checks read structure, and laundering produces impeccable structure. No check over well-formedness distinguishes a taught page recording a finding from one recording a confabulation, because the difference is in the world and not in the file.
+
+MPLPB-LOCAL-008 §14 Test 3 makes the parallel point one step down: field utilization detects whether metadata is *consulted*, not whether consulting it *helps*. Here the gap is wider — structural validity detects whether a page is *well-formed*, not whether it is *sourced*.
+
+Any proposal to fix this by inspecting content should be refused. A validator judging whether a claim is true would be a truth engine, and MPLPB-COST-012 §7 spends a section refusing to be one.
+
+### 5.3 The provenance class
+
+Two fields, extending the metadata contract in MPLPB-LOCAL-008 §5.1:
+
+`mplpb:origin` — one of `human`, `taught`, `derived`.
+
+`mplpb:origin_depth` — an integer. `0` for a page a human authored or ratified. For a taught page, one greater than the deepest of the pages cited in its creation. A page taught from nothing is depth 1, not 0; the teaching loop cannot award itself a human signature.
+
+The depth field is load-bearing. A taught page grounded in authored sources is depth 1. A page taught from that is depth 2. A chain of actors teaching each other produces a climbing integer, and the climb is the signal.
+
+**Retrieval does not hide depth.** A hit above depth 0 carries its depth in the citation, exactly as `substrate` is inseparable from the hit object rather than a render-time decoration, and for the same reason.
+
+**Depth beyond a threshold requires ratification.** The default is 1: a page may be taught from authored material without ceremony, and a page taught from taught material is refused until a human ratifies. Ratification writes `origin: human`, `origin_depth: 0`, and a ratifier identity. It is a signature, not a compliment.
+
+**The threshold is configuration, not doctrine.** A deployment setting it to 3 has accepted three generations of machine authorship between human checks. That number belongs in the corpus where an auditor can see it, and §10 sets it per profile.
+
+### 5.4 What this does not do
+
+It does not detect laundering. It bounds how far an unratified chain runs before a human is asked, and makes the resulting depth visible to anything retrieving.
+
+A human who ratifies without reading defeats it completely. That failure has its own entry, FM-S9, and its own detector, which measures ratification latency rather than quality — because latency is observable and quality is not. A population whose median latency is four seconds is not ratifying.
+
+This is weaker than it would be comfortable to claim. The mechanism converts an invisible failure into a visible number. Whether anyone looks at the number is outside the corpus.
+
+---
+
+## 6. Federation
+
+### 6.1 Roots stay bounded
+
+Bounded traversal is unchanged. A crawl resolves relative links, rejects anything outside its root, and visits each reachable page once. A link from corpus A to corpus B is external and is treated as one.
+
+This is what keeps a corpus identifiable. A corpus whose crawl can wander into another has no boundary, and a thing with no boundary cannot declare a scope.
+
+### 6.2 The registry is a corpus
+
+Routing across corpora needs a directory: which corpora exist, where their roots are, what each declares, who owns it, what substrate it lives on.
+
+That directory is itself an MPLPB corpus — HTML pages with metadata blocks, one per registered corpus. This is not decorative symmetry. It means the registry validates with the same validator, supersedes with the same discipline, carries provenance with the same fields, and is crawled by the same crawler. A registry kept in a service's configuration is a second kind of object with a second set of failure modes and no janitor.
+
+### 6.3 Cross-corpus routing is precedence, one level up
+
+MPLPB-SEP-007 decides between spokes by declared scope and returns `ambiguous` when ownership cannot be resolved past the margin, naming the spokes, quoting each declared scope, and asking the user to narrow.
+
+Cross-corpus routing applies the identical rule with corpora in place of spokes. A clear winner is routed to; a tie within the margin returns `ambiguous` and stops.
+
+It stops rather than merging. Merging results from corpora with different owners, classifications, and retention rules produces an answer no single owner is accountable for, and accountability is most of what an enterprise deployment is buying.
+
+### 6.4 Provenance across the boundary
+
+A citation of a page in another corpus carries the corpus identifier alongside the fields already required:
+
+```
+[CORPUS-B · POL-RETENTION-004 · policy/retention.html · v3 · local · current · origin=human d0]
+```
+
+Longer than anyone wants, deliberately. A taught note cited as an authored one, or a foreign page cited as a local one, reads better than the truth — which is what makes those failures quiet. There is no shorter form on offer. Citations are built from fields of the hit object, so a citation missing one indicates a render path that assembled the string itself.
+
+---
+
+## 7. Access Control, Declined
+
+`mplpb:protected` and `mplpb:classification` filter retrieval. They are not authentication and not authorization. This document does not improve on that position, and restates it because enterprise scale is exactly where the temptation to improve on it arrives.
+
+Authentication and authorization belong to the substrate beneath the corpus: filesystem permissions, repository access, an identity provider, a network boundary. These are solved problems with mature implementations, none improved by reimplementation in a crawler.
+
+What the corpus layer adds is narrow and worth having. Classification travels with the page rather than living in a separate list that drifts from it; a served result records which classification was used to decide it was returnable, so an audit can reconstruct the decision; and the filter is named a filter everywhere it appears.
+
+The distinction is not pedantic. A filter that quietly omits a page produces the same user experience as a corpus that lacks it, and an operator who believes the filter is a gate will eventually place material behind it that needed a gate.
+
+---
+
+## 8. Corpus Health as a Measured Quantity
+
+At one author's scale, condition is assessed by looking. At scale nobody looks, so condition has to be a number or it is nothing.
+
+| Metric | Definition | What a rise means |
+| --- | --- | --- |
+| Ambiguity rate | Routing decisions returning `ambiguous` ÷ total | Declared scopes overlap; spokes or corpora need re-drawing |
+| Supersession forks | Identifiers with more than one current successor | Write discipline bypassed or leases ignored |
+| Depth histogram | Distribution of `origin_depth` across current pages | Machine authorship accumulating between human checks |
+| Retired mismatch | Indexed `status: retired` ÷ files under `_log/superseded/` | The retired ingestion path is not running |
+| Maintenance rate | Write and supersession events per read event | The `m` term of MPLPB-COST-012 §9, measured rather than assumed |
+| Ratification latency | Median time from write to signature | FM-S9; a population that never rejects is not deciding |
+
+All are computable from crawl records with no network and no service.
+
+Thresholds are not supplied. A tolerable ambiguity rate depends on how finely a deployment drew its spokes, and inventing a number here would claim an authority the corpus has not earned. What is supplied is the measurement, on the argument that a quantity nobody computes cannot be a quantity anybody manages.
+
+---
+
+## 9. The Amortization Ceiling
+
+MPLPB-COST-012 §9 gives the model. An author pays a structural cost `C_s` once, maintenance `C_m` over `m` events, and readers pay reduced reconstruction `C'_r` over `n` retrievals:
+
+```
+    C_s + m · C_m + n · C'_r     versus     n · C_r
+```
+
+That paper states the condition honestly: smaller when the structural work substantially reduces per-retrieval reconstruction **and** `n >> m`. Scale attacks the condition in two ways.
+
+### 9.1 Scaling both sides
+
+Let `a` be the number of actors. Reads scale with `a` — that is the point. Actors that write back scale writes with `a` too:
+
+```
+    n = a · n₁          m = a · m₁          n / m = n₁ / m₁
+```
+
+The ratio is invariant in `a`. Adding actors does not improve amortization; it enlarges both sides by the same factor. This is disappointing rather than fatal: scale is neutral on the economics, not harmful.
+
+### 9.2 The term that does not amortize
+
+Let `r` be the fraction of taught writes requiring ratification and `C_h` its cost:
+
+```
+    C_s + m · C_m + r · m · C_h + n · C'_r
+```
+
+`C_m` is machine cost and falls with tooling. `C_h` is human attention and does not. As `a` grows, `m` grows, and `r · m · C_h` grows linearly while being paid in a currency that does not scale.
+
+The ceiling is not at compute, storage, index size, or corpus size. It is at the number of judgements a human population can make per unit time. A deployment can add actors until ratification saturates, after which further actors make the corpus worse rather than larger, because the marginal write either waits or is signed unread.
+
+### 9.3 The operative condition
+
+**This architecture is economical where the corpus is read far more often than it is written.** A population of readers over a human-maintained corpus is the good case and a common one.
+
+**A population that writes as often as it reads is not using a knowledge corpus.** It is using a distributed log with metadata, and will pay corpus prices for log behaviour. The right response is architectural, not economic: material written at that rate is event data and belongs where event data belongs.
+
+This is the least comfortable result here and it is in the body rather than a footnote for that reason.
+
+---
+
+## 10. Deployment Profiles
+
+MPLPB-SMART-011 has a mode controller deciding what a front end may answer. This is the same idea one level out: what a *deployment* may answer, given who is asking and what a wrong answer costs.
+
+### 10.1 The invariant
+
+`answer_without_retrieval` is False in every profile, and no constructor argument changes it. Passing `True` raises rather than warns.
+
+Scale makes this more important, not less. At one reader an improvised answer is one wrong answer. Where readers teach the corpus it becomes a document, which is §5. That is why most profile settings govern what may be *written* rather than what may be read.
+
+### 10.2 The four profiles
+
+```
+                       swarm     lab   internal   external
+max served depth           1       2          1          0
+retired served            no     yes         no         no
+teaching                 yes     yes        yes         no
+depth threshold            1       2          1          0
+ratification              yes      no        yes        yes
+fallback                full    full       full      prose
+lease ttl                15s    120s        30s        30s
+```
+
+**swarm** — many agents, one corpus, one team. Leases are short because agents fail fast and a thirty-second lease held by a dead process is thirty seconds of stalled writes. Depth threshold 1 with ratification enforced. This is where §9's ceiling bites hardest: watch the FM-S9 latency median before adding agents.
+
+**lab** — a research group or department. The loosest profile, because readers are the authors and a wrong retrieval is caught by somebody who would notice. That is what buys depth threshold 2 and advisory ratification. Retired pages are served, because *what did this method used to say* is an ordinary research question rather than a disclosure — and a lab that cannot reconstruct its own superseded practice has lost what `_log/superseded/` is for. Leases run to two minutes because a person does not want a lock expiring mid-paragraph.
+
+**helpdesk-internal** — an assistant answering staff. Reach beats precision, and the reasoning is what each failure costs: a staff member who gets an adjacent page recognises it and rephrases, which costs seconds, while one who gets *not in this corpus* for something that is in the corpus opens a ticket, which costs a person. Teaching stays on because the people asking are often the people who know, and the ticket queue is where corpus gaps surface first.
+
+**helpdesk-external** — an assistant answering customers. `max_served_depth` is 0: no machine-authored page reaches a customer. A taught page is an internal convenience and an external liability, and the depth field is what makes that distinction enforceable rather than aspirational. Teaching is off entirely — a customer-facing loop that writes back is a poisoning surface with an unauthenticated input, and no threshold makes that acceptable. Only `public` classification is served, and the classification filter is still not an access control.
+
+### 10.3 The fallback setting is a measured trade
+
+Every other setting is a judgement. This one has numbers, reported in §11.3.
+
+MPLPB-SMART-011 §4 specifies narrow before broad: require every content term, fall back to any term only if that returns nothing. The open question was whether the broad pass should reach declared metadata or only page prose. Restricting it to prose gives perfect refusal and removes the entire benefit of declared scope, because the declared surface then becomes reachable only through the all-terms pass — so one unfamiliar word in a user's question makes it unreachable.
+
+Reach and precision are one dial. The decision rule is short: **if a wrong answer is cheap and a missed answer is expensive, take reach; if a wrong answer is expensive and a refusal is acceptable, take precision.** Staff can absorb a wrong answer. Customers cannot.
+
+---
+
+## 11. Evidence
+
+The ablation named open in MPLPB-LOCAL-008 §14 Test 4 asks whether a structured corpus outperforms flat storage of the same files. This section reports a retrieval experiment against that question. The full protocol is Appendix A; the harness is published and takes a seed.
+
+### 11.1 What was run
+
+A 79-page structured corpus against a stripped copy: prose byte-identical, every `mplpb:` field removed, every anchor and `rel` attribute removed, all navigation pages deleted, flattened to one directory with randomized filenames. Identical FTS5 ranker for both arms. Probe set pre-registered and hashed before the run; probes shuffled and arms interleaved; scoring mechanical against answers fixed in advance.
+
+Probe classes are split into two tiers, because half are circular. Currency, supersession, and ambiguity remove a field and then check for it, so a stripped arm scoring zero establishes what the field is for and not that it earns its cost. Those results are reported in Appendix A and carry no weight here.
+
+### 11.2 The result that matters
+
+Probes were generated at four controlled overlap levels, mixing declared trigger vocabulary with neutral words verified absent from every body, scope, and trigger in the corpus.
+
+```
+overlap with the declared field      structured    stripped
+1.00  (probe quotes the field)            95.8%        0.0%
+0.50  (one relevant word in two)          79.2%        0.0%
+0.33  (one relevant word in three)        79.2%        0.0%
+0.00  (no relevant words)                  0.0%        0.0%
+```
+
+At overlap 0.33 the probe carries one word from the page's declared trigger and two words appearing nowhere in the corpus, and the structured arm returns the correct page 79.2% of the time where the stripped arm returns it 0.0% of the time.
+
+This is the mechanism MPLPB-COST-012 §2.1 asserts under *locate relevant material for a query*: declared scope and trigger conditions make a page reachable by vocabulary that does not appear in its prose. The floor check passed — at zero overlap every arm scored 0.0% — so the neutral vocabulary did not leak.
+
+The residual confound is stated plainly in §13.6 and is not removable by this author.
+
+### 11.3 The fallback trade, measured
+
+| | correct refusal | retrieval at 0.33 overlap |
+| --- | --- | --- |
+| `fallback: full` | 75.0% | 79.2% |
+| `fallback: prose` | 100.0% | 0.0% |
+
+Restricting the broad pass to prose gives perfect refusal and destroys the capability in §11.2 entirely. This is the measurement behind §10.3, and it is the reason `fallback` is a per-deployment setting rather than a default.
+
+### 11.4 A defect located
+
+Every content and currency failure recorded in the structured arm had one cause: a sub-index page at rank 1. A Sub-Index aggregates the vocabulary of everything beneath it plus its own declared scope, so for a query about that spoke it outranks the page that actually answers. Excluding navigation categories raised discrimination between near-duplicate pages from 66.7% to 75.0% and cost nothing anywhere.
+
+Registered as proposed FM-L12 for MPLPB-LOCAL-008, and now the default in every profile:
+
+> **FM-L12 — Index-as-distractor.** A Sub-Index outranks the operational pages it lists, because it aggregates their vocabulary and its own declared scope. *Detection:* score a probe set for content and check whether navigation pages appear at rank 1. *Mitigation:* exclude declared navigation categories from content retrieval; the category field needed is already required.
+
+### 11.5 What this evidence is not
+
+It is retrieval, not reconstruction. The ablation as written asks whether the framework's rules and relationships come back *intact* — a reasoner scored on answer accuracy and correct refusals under the four-category scheme in MPLPB-COST-012 §4. Nothing here touches that. A corpus could retrieve identically under both arms and reconstruct differently, and this experiment would not see it.
+
+§13.5 states what a valid run needs.
+
+---
+
+## 12. Failure Mode Index
+
+The FM-L series in MPLPB-LOCAL-008 §12 covers the corpus. This series covers what concurrency, federation, and deployment add. Numbering is independent; an FM-S identifier never refers to an FM-L failure.
+
+**FM-S1 — Identifier collision.** Two writers allocate the same identifier. *Detection:* the duplicate check, after both pages exist. *Prevention:* allocation under lease, §4.1.
+
+**FM-S2 — Supersession fork.** Two current documents naming the same predecessor. *Detection:* group current pages by their `supersedes` entries and report any predecessor with more than one successor. Not covered by the eight structural checks.
+
+**FM-S3 — Epistemic laundering.** An unsourced assertion enters through the teaching loop and is retrieved as sourced. *Detection:* not directly detectable. `origin_depth` bounds the chain and exposes it in citations; the depth histogram shows accumulation. Containment, not detection.
+
+**FM-S4 — Stale-lease write.** A write completes after its lease expired and was reacquired. *Detection:* the spoke rejects a fencing token below the last accepted, and logs it. A deployment with no such rejections has no contention or no fencing.
+
+**FM-S5 — Cross-corpus scope collision.** Two registered corpora declare scopes overlapping enough that routing cannot resolve a class of queries. *Detection:* ambiguity rate partitioned by corpus pair. A recurring pair is a boundary needing re-drawing, not a router needing tuning.
+
+**FM-S6 — Registry drift.** The registry names a root that no longer exists, no longer validates, or has changed its declared scope without the entry being superseded. *Detection:* validate every registered root on a schedule and compare declared scopes.
+
+**FM-S7 — Filter mistaken for gate.** Material placed behind a classification field believing it to be access control. *Detection:* not mechanical, which is why §7 makes naming it the mechanism. Nearest check: whether any page claims a level the substrate does not enforce.
+
+**FM-S8 — Maintenance saturation.** Writes approach reads; the corpus is a log. *Detection:* the maintenance rate. This is §9.3 arriving, and the one most likely to be mistaken for a scaling success.
+
+**FM-S9 — Ratification theatre.** Humans ratify without reading and the depth gate becomes a formality. *Detection:* distribution of ratification latency and the ratio of ratifications to rejections. Latency is a poor proxy for attention, used because it is observable and quality is not.
+
+**FM-S10 — Federated provenance loss.** A cross-corpus citation drops the corpus identifier, so a foreign page reads as local. *Detection:* citations are generated from the hit object, so one lacking the field indicates a render path that built the string itself.
+
+**FM-S11 — Profile drift.** Settings edited until the assistant stops refusing, arriving somewhere no profile describes. *Detection:* record the profile name and settings hash with each served answer.
+
+**FM-S12 — Depth policy without depth data.** A profile sets `max_served_depth: 0` over a corpus whose pages never declared `origin`, so everything reads as depth 0 and the policy filters nothing. *Detection:* count current pages with no declared origin. A corpus of all-default provenance has no provenance.
+
+**FM-S13 — Fallback chosen by default rather than decision.** A deployment inherits the reach-optimised setting and serves customers with it. *Detection:* profile name against audience.
+
+**FM-S14 — Ratification saturation.** Enough actors that the queue never empties, so writes stall or are signed unread. *Detection:* latency median with queue depth. FM-S9 seen from the deployment side.
+
+**FM-S15 — Index-as-distractor.** Recorded here as FM-L12 in §11.4, because it is a corpus-layer defect rather than a swarm one, and belongs in MPLPB-LOCAL-008 on registration.
+
+---
+
+## 13. Falsifiers
+
+**13.1 — Concurrency.** Run many writers against one corpus with leases and fencing enabled. Identifier collisions or supersession forks would mean §4 does not do what it claims. *Run; passes.*
+
+**13.2 — Laundering containment.** Seed an invented claim at depth 0 through a bypassing actor, then attempt to teach a second page from it. If the second page is written without ratification, or either is retrievable without its depth in the citation, §5.3 is decorative. *Run; passes.*
+
+**13.3 — Federation boundary.** Crawl a registered corpus whose pages link into a second. Any page outside the crawled root entering the index means neither corpus has a scope. *Run; passes.*
+
+**13.4 — Profile enforcement.** If a page above a profile's `max_served_depth` can be served through any path — library, console, or citation render — the depth policy is advisory and §10.2's external guarantee is void. *Run; passes.*
+
+**13.5 — The ablation (open).** Unchanged since MPLPB-LOCAL-008 §14 Test 4. §11 is retrieval evidence and does not close it. A valid run needs, in order of value: a probe author who has not read the corpus; a real corpus rather than a generated one; a reconstruction stage scoring whether rules come back recovered, blended, inverted, or invented; and a semantic retriever as a second condition, because under a lexical index vocabulary overlap is effectively binary. The first item requires one other person and an afternoon. **Until this is run, the correct statement remains that structure has not been shown to beat storage.**
+
+**13.6 — The vocabulary confound (open).** §11.2's result depends on trigger conditions and probes written by the same author, so what it shows is that pages are findable by *the words the author predicted a user would use*. Whether real users use those words is unestablished. This is a subset of 13.5 and is stated separately because it bounds §11.2 specifically.
+
+**13.7 — Ratification decay (open).** Whether ratification quality falls as volume rises. Requires a seeded population of pages containing known errors, ratified by people who do not know which. If quality falls with volume, §5.3 is load-bearing only at low volume and §9.2's ceiling is lower than the arithmetic suggests.
+
+**13.8 — Laundering incidence (open).** How often FM-S3 occurs in a running deployment. §5 is justified by the failure being severe, not by evidence that it is frequent. If rare, the depth gate is overhead.
+
+**13.9 — Profile coverage (open).** Whether these four profiles cover the deployments that exist. Four was chosen by enumerating audiences the prior papers named, not by surveying anybody. A deployment fitting none is evidence against the taxonomy and should be reported rather than forced into the nearest one.
+
+---
+
+## 14. What This Does and Does Not Establish
+
+It does not establish:
+
+- that MPLPB scales to arbitrary numbers of actors;
+- that the cost result in MPLPB-COST-012 transfers to enterprise deployment — §3 gives it up explicitly;
+- that structure beats flat storage of the same files — §13.5, open since MPLPB-LOCAL-008;
+- that real users phrase questions the way a corpus's declared triggers do — §13.6;
+- that epistemic laundering occurs at a rate that matters — §13.8;
+- that human ratification survives volume — §13.7;
+- that declared-scope routing between corpora outperforms a merged index.
+
+It does establish:
+
+- that the concurrent write failures in §4 are preventable by boring means, auditable by reading one lease file, and that the prevention holds under many writers;
+- that supersession forks are detectable, though caught by no check the prior specifications supply;
+- that a provenance depth counter bounds unratified machine authorship, makes its accumulation visible in citations and in a histogram, and permits a deployment to state and enforce that no machine-authored page reaches a customer;
+- that federated routing preserves corpus boundaries and returns `ambiguous` rather than merging across owners;
+- that on one synthetic corpus, declared trigger text makes pages retrievable by vocabulary absent from their prose at 79.2% against 0.0%, surviving dilution to one relevant word in three;
+- that this advantage is entirely contingent on the broad fallback reaching metadata, and that reach and refusal precision trade on a single dial worth 25 points of refusal against 79 of retrieval;
+- that navigation pages are retrieval distractors, and excluding them costs nothing.
+
+The evidence class for the concurrency and profile claims is implementation: they are properties of code that can be executed and found to hold. The evidence class for §11 is a single author-run experiment on a generated corpus, which is the weakest class in MPLPB-COST-012 §4.1 and is stated that way deliberately.
+
+Existence, comparability, superiority, and universality remain four claims requiring four standards. This document argues the first two, declines the last two, and adds a fifth it does not claim: that these mechanisms are necessary at any particular scale.
+
+---
+
+## 15. Conclusion
+
+The prior specifications describe a corpus one person writes and many machines read. Adding writers breaks ordering, and ordering is repaired by leases and fencing tokens nobody will find interesting. Adding corpora breaks routing, repaired by applying the precedence rule one level up and refusing to merge across owners. Adding an audience that is not the author breaks the assumption that a wrong answer is cheap, repaired by declaring per deployment what may be served and what may be written. All three repairs are unremarkable, which is the intended outcome.
+
+The interesting failure is the one that does not look like a failure. A population that teaches itself produces a corpus in perfect structural health whose contents are increasingly its own inventions — correctly cited, properly superseded, fully provenanced, and unsourced. No validator will object. The available responses are to count the generations, expose the count in every citation, and require a human somewhere in the chain, knowing that the human is the ceiling, that the ceiling is low, and that a human who ratifies without reading removes it entirely.
+
+The economics follow. Scale does not improve amortization, because it scales reads and writes together. What it can do is push a corpus past the condition under which amortization held at all, into a regime where the thing being maintained is not a reference but a log. That boundary is now locatable, and locating it is most of what this document is for.
+
+Write complete artifacts. Allocate their identifiers rather than choosing them. Order their supersessions. Record where their content came from and how many machines it passed through on the way. Route between them by declared scope and refuse to merge across owners. Declare, per audience, how much of the machine's own writing anybody is willing to stand behind.
+
+Then count how often anyone reads them, and how often anyone writes them, and check that the first number is much larger than the second.
+
+---
+
+## Appendix A — Experimental Protocol
+
+Published so the experiment in §11 can be re-run rather than believed.
+
+**Corpus.** 79 pages, six spokes, ten pages each plus a near-duplicate pair, one retired predecessor per spoke, one sub-index per spoke, one main index. Every page declares identifier, category, scope, `when_to_use`, status, version, substrate, origin, and origin depth. Body vocabulary and trigger vocabulary are disjoint by construction: a practitioner's word for a thing and a newcomer's description of the situation share no terms. Generated under seed 20260830.
+
+**Stripped arm.** Prose byte-identical. Every `mplpb:` meta tag removed, every anchor and `rel` attribute removed, all seven navigation pages deleted, flattened to one directory with randomized four-digit filenames. 72 documents. The filename-to-identifier mapping is held by the scorer and never visible to retrieval.
+
+**Ranker.** SQLite FTS5, identical for both arms, narrow before broad: require every content term, fall back to any term only if that returns nothing. The ranker takes no argument identifying which arm it is reading, and a test asserts this.
+
+**Variants.** Three declared structured variants: as-is; excluding navigation categories; and the latter plus a prose-only broad fallback. The stripped arm has nothing to exclude.
+
+**Pre-registration.** Probe set and predictions frozen and hashed before running. `ablation/v2/probes.sha256`. Editing the probes invalidates the hash, which is the point: a run whose probes changed after results were seen is not pre-registered, and the hash makes that visible to somebody who was not present.
+
+**Validity checks, pre-registered alongside the predictions.** Two, both of which fired and both of which void results rather than explain them away:
+
+- *Ceiling.* If the stripped arm scores 100% on a class, that class has no headroom, can only detect the treatment being worse, and is void. It fired on simple lookup and on refusal; both are excluded from §11's conclusions.
+- *Confound.* Median probe-to-declared-field vocabulary overlap is measured and reported. Above 0.5 the result is substantially planted and must be discounted. It fired at 1.00 on the first probe construction, which is why §11.2 reports a graded curve rather than a single figure.
+
+**Grading.** Probes regenerated at four overlap levels by mixing trigger vocabulary with neutral words verified absent from every body, scope, and trigger. A floor check requires every arm to score 0.0% at zero overlap; it passed.
+
+**Scoring.** Mechanical, against expected answers fixed in the hashed pre-registration. No scoring path consults anything but declared fields and those answers, and a test asserts the scoring function contains no probe-specific branching.
+
+**Circular classes.** Currency, supersession, and ambiguity remove a field and check for it. Reported for completeness — structured 100%, stripped 0% on all three — and carrying no evidential weight.
+
+```bash
+python3 tools/ablation/generate_corpus.py
+python3 tools/ablation/probes.py
+sha256sum -c ablation/v2/probes.sha256
+python3 tools/ablation/run_ablation.py
+python3 tools/ablation/run_graded.py
+```
+
+Deterministic under seed 20260830, no network at any point. `unshare -rn` confirms.
+
+---
+
+## Appendix B — Revision History
+
+v3 is a consolidation. It supersedes three separately issued drafts and absorbs their content: MPLPB-SWARM-013 v1 through v1.2 (concurrency and federation), MPLPB-DEPLOY-015 v1 (deployment profiles, now §10), and MPLPB-TEST-014 v1 and v2 (the ablation, now §11 and Appendix A). All are retained under `docs/superseded/` rather than deleted, and their pre-registration hashes remain verifiable.
+
+Two corrections are recorded because they changed conclusions rather than wording.
+
+**The first ablation run is withdrawn as uninterpretable.** Its control arm scored 100% on both non-circular classes, so the instrument could detect the structured corpus performing worse and could never detect it performing better. It produced a clean negative that meant nothing. The deeper cause was that the corpus it tested carried no `when_to_use` field at all — it stripped a corpus lacking the mechanism the claim rests on, then reported that stripping changed little. The ceiling condition is now a pre-registered validity check rather than something noticed afterwards, and it fired again on two classes in the second run.
+
+**The prose-only fallback is withdrawn as a general recommendation.** It was proposed as a fix for out-of-scope over-matching and does fix that, raising correct refusal from 75% to 100%. It also drops retrieval at realistic vocabulary overlap from 79.2% to 0.0%, because it makes the declared surface reachable only through the all-terms pass. It is re-issued in §10.3 as a per-deployment setting, since what it trades depends on a cost only the deployment knows.
+
+Both are noted here rather than in the body because the body should state what is currently believed. This appendix states how that changed, which is the same discipline `_log/superseded/` applies to pages.
+
+---
+
+## Philosophical Note
+
+A library survives being read.
+
+Whether it survives being written by its readers depends on how many of them there are, how many machines sit between a claim and the last person who checked it, and whether anybody is counting.
+
+The structure does not care. That is its virtue and its whole limitation.
+
+— MDM
+
+---
+
+## Source note
+
+The reference implementation accompanies this document: MIT for code, CC BY 4.0 for documentation. 144 tests, standard library only, no network at any point in execution. Falsifiers 13.1 through 13.4 are executed by the test suite rather than described.
+
+The build tool under `tools/` requires `reportlab` to render this paper as PDF. That is a documentation dependency, is not imported by the package, and is not required to run the implementation or its tests. It is disclosed because a claim about a dependency surface should include the parts of the repository inconvenient for it.
+
+Directory names are lowercase throughout and every command in the README matches the directories on disk exactly.
+
+All figures in §11 come from one synthetic corpus generated under seed 20260830 with an author-written probe set. They are a direction and not a constant. Nothing in this document transfers to any real corpus without being re-run against it.
+
+**Back to.** Main Index > Specification / Architecture Sub-Index
