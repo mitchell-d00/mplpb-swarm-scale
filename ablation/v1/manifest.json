@@ -1,0 +1,555 @@
+[
+  {
+    "doc_id": "DEP-001",
+    "path": "deploy/promotion_01.html",
+    "spoke": "deploy",
+    "status": "current",
+    "term": "promotion"
+  },
+  {
+    "doc_id": "DEP-002",
+    "path": "deploy/canary_02.html",
+    "spoke": "deploy",
+    "status": "current",
+    "term": "canary"
+  },
+  {
+    "doc_id": "DEP-003",
+    "path": "deploy/artifact_03.html",
+    "spoke": "deploy",
+    "status": "current",
+    "term": "artifact"
+  },
+  {
+    "doc_id": "DEP-004",
+    "path": "deploy/staging_04.html",
+    "spoke": "deploy",
+    "status": "current",
+    "term": "staging"
+  },
+  {
+    "doc_id": "DEP-005",
+    "path": "deploy/rollout_05.html",
+    "spoke": "deploy",
+    "status": "current",
+    "term": "rollout"
+  },
+  {
+    "doc_id": "DEP-006",
+    "path": "deploy/release_06.html",
+    "spoke": "deploy",
+    "status": "current",
+    "term": "release"
+  },
+  {
+    "doc_id": "DEP-007",
+    "path": "deploy/pipeline_07.html",
+    "spoke": "deploy",
+    "status": "current",
+    "term": "pipeline"
+  },
+  {
+    "doc_id": "DEP-008",
+    "path": "deploy/gate_08.html",
+    "spoke": "deploy",
+    "status": "current",
+    "term": "gate"
+  },
+  {
+    "doc_id": "DEP-009",
+    "path": "deploy/cutover_09.html",
+    "spoke": "deploy",
+    "status": "current",
+    "term": "cutover"
+  },
+  {
+    "doc_id": "DEP-010",
+    "path": "deploy/bake_10.html",
+    "spoke": "deploy",
+    "status": "current",
+    "term": "bake"
+  },
+  {
+    "doc_id": "DEP-011",
+    "path": "deploy/promotion_11.html",
+    "spoke": "deploy",
+    "status": "current",
+    "term": "promotion"
+  },
+  {
+    "doc_id": "DEP-OLD-003",
+    "path": "_log/superseded/deploy_artifact_v1.html",
+    "spoke": "deploy",
+    "status": "retired",
+    "term": "artifact"
+  },
+  {
+    "doc_id": "DEP-INDEX-000",
+    "path": "deploy/_index.html",
+    "spoke": "deploy",
+    "status": "current",
+    "term": ""
+  },
+  {
+    "doc_id": "RET-001",
+    "path": "retention/disposal_01.html",
+    "spoke": "retention",
+    "status": "current",
+    "term": "disposal"
+  },
+  {
+    "doc_id": "RET-002",
+    "path": "retention/schedule_02.html",
+    "spoke": "retention",
+    "status": "current",
+    "term": "schedule"
+  },
+  {
+    "doc_id": "RET-003",
+    "path": "retention/archive_03.html",
+    "spoke": "retention",
+    "status": "current",
+    "term": "archive"
+  },
+  {
+    "doc_id": "RET-004",
+    "path": "retention/custody_04.html",
+    "spoke": "retention",
+    "status": "current",
+    "term": "custody"
+  },
+  {
+    "doc_id": "RET-005",
+    "path": "retention/ledger_05.html",
+    "spoke": "retention",
+    "status": "current",
+    "term": "ledger"
+  },
+  {
+    "doc_id": "RET-006",
+    "path": "retention/destruction_06.html",
+    "spoke": "retention",
+    "status": "current",
+    "term": "destruction"
+  },
+  {
+    "doc_id": "RET-007",
+    "path": "retention/hold_07.html",
+    "spoke": "retention",
+    "status": "current",
+    "term": "hold"
+  },
+  {
+    "doc_id": "RET-008",
+    "path": "retention/tranche_08.html",
+    "spoke": "retention",
+    "status": "current",
+    "term": "tranche"
+  },
+  {
+    "doc_id": "RET-009",
+    "path": "retention/register_09.html",
+    "spoke": "retention",
+    "status": "current",
+    "term": "register"
+  },
+  {
+    "doc_id": "RET-010",
+    "path": "retention/purge_10.html",
+    "spoke": "retention",
+    "status": "current",
+    "term": "purge"
+  },
+  {
+    "doc_id": "RET-011",
+    "path": "retention/disposal_11.html",
+    "spoke": "retention",
+    "status": "current",
+    "term": "disposal"
+  },
+  {
+    "doc_id": "RET-OLD-003",
+    "path": "_log/superseded/retention_archive_v1.html",
+    "spoke": "retention",
+    "status": "retired",
+    "term": "archive"
+  },
+  {
+    "doc_id": "RET-INDEX-000",
+    "path": "retention/_index.html",
+    "spoke": "retention",
+    "status": "current",
+    "term": ""
+  },
+  {
+    "doc_id": "INC-001",
+    "path": "incident/outage_01.html",
+    "spoke": "incident",
+    "status": "current",
+    "term": "outage"
+  },
+  {
+    "doc_id": "INC-002",
+    "path": "incident/severity_02.html",
+    "spoke": "incident",
+    "status": "current",
+    "term": "severity"
+  },
+  {
+    "doc_id": "INC-003",
+    "path": "incident/paging_03.html",
+    "spoke": "incident",
+    "status": "current",
+    "term": "paging"
+  },
+  {
+    "doc_id": "INC-004",
+    "path": "incident/postmortem_04.html",
+    "spoke": "incident",
+    "status": "current",
+    "term": "postmortem"
+  },
+  {
+    "doc_id": "INC-005",
+    "path": "incident/escalation_05.html",
+    "spoke": "incident",
+    "status": "current",
+    "term": "escalation"
+  },
+  {
+    "doc_id": "INC-006",
+    "path": "incident/commander_06.html",
+    "spoke": "incident",
+    "status": "current",
+    "term": "commander"
+  },
+  {
+    "doc_id": "INC-007",
+    "path": "incident/timeline_07.html",
+    "spoke": "incident",
+    "status": "current",
+    "term": "timeline"
+  },
+  {
+    "doc_id": "INC-008",
+    "path": "incident/mitigation_08.html",
+    "spoke": "incident",
+    "status": "current",
+    "term": "mitigation"
+  },
+  {
+    "doc_id": "INC-009",
+    "path": "incident/blameless_09.html",
+    "spoke": "incident",
+    "status": "current",
+    "term": "blameless"
+  },
+  {
+    "doc_id": "INC-010",
+    "path": "incident/triage_10.html",
+    "spoke": "incident",
+    "status": "current",
+    "term": "triage"
+  },
+  {
+    "doc_id": "INC-011",
+    "path": "incident/outage_11.html",
+    "spoke": "incident",
+    "status": "current",
+    "term": "outage"
+  },
+  {
+    "doc_id": "INC-OLD-003",
+    "path": "_log/superseded/incident_paging_v1.html",
+    "spoke": "incident",
+    "status": "retired",
+    "term": "paging"
+  },
+  {
+    "doc_id": "INC-INDEX-000",
+    "path": "incident/_index.html",
+    "spoke": "incident",
+    "status": "current",
+    "term": ""
+  },
+  {
+    "doc_id": "ACC-001",
+    "path": "access/credential_01.html",
+    "spoke": "access",
+    "status": "current",
+    "term": "credential"
+  },
+  {
+    "doc_id": "ACC-002",
+    "path": "access/rotation_02.html",
+    "spoke": "access",
+    "status": "current",
+    "term": "rotation"
+  },
+  {
+    "doc_id": "ACC-003",
+    "path": "access/revocation_03.html",
+    "spoke": "access",
+    "status": "current",
+    "term": "revocation"
+  },
+  {
+    "doc_id": "ACC-004",
+    "path": "access/onboarding_04.html",
+    "spoke": "access",
+    "status": "current",
+    "term": "onboarding"
+  },
+  {
+    "doc_id": "ACC-005",
+    "path": "access/offboarding_05.html",
+    "spoke": "access",
+    "status": "current",
+    "term": "offboarding"
+  },
+  {
+    "doc_id": "ACC-006",
+    "path": "access/badge_06.html",
+    "spoke": "access",
+    "status": "current",
+    "term": "badge"
+  },
+  {
+    "doc_id": "ACC-007",
+    "path": "access/entitlement_07.html",
+    "spoke": "access",
+    "status": "current",
+    "term": "entitlement"
+  },
+  {
+    "doc_id": "ACC-008",
+    "path": "access/attestation_08.html",
+    "spoke": "access",
+    "status": "current",
+    "term": "attestation"
+  },
+  {
+    "doc_id": "ACC-009",
+    "path": "access/provisioning_09.html",
+    "spoke": "access",
+    "status": "current",
+    "term": "provisioning"
+  },
+  {
+    "doc_id": "ACC-010",
+    "path": "access/quorum_10.html",
+    "spoke": "access",
+    "status": "current",
+    "term": "quorum"
+  },
+  {
+    "doc_id": "ACC-011",
+    "path": "access/credential_11.html",
+    "spoke": "access",
+    "status": "current",
+    "term": "credential"
+  },
+  {
+    "doc_id": "ACC-OLD-003",
+    "path": "_log/superseded/access_revocation_v1.html",
+    "spoke": "access",
+    "status": "retired",
+    "term": "revocation"
+  },
+  {
+    "doc_id": "ACC-INDEX-000",
+    "path": "access/_index.html",
+    "spoke": "access",
+    "status": "current",
+    "term": ""
+  },
+  {
+    "doc_id": "MON-001",
+    "path": "monitoring/threshold_01.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "term": "threshold"
+  },
+  {
+    "doc_id": "MON-002",
+    "path": "monitoring/dashboard_02.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "term": "dashboard"
+  },
+  {
+    "doc_id": "MON-003",
+    "path": "monitoring/saturation_03.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "term": "saturation"
+  },
+  {
+    "doc_id": "MON-004",
+    "path": "monitoring/latency_04.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "term": "latency"
+  },
+  {
+    "doc_id": "MON-005",
+    "path": "monitoring/probe_05.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "term": "probe"
+  },
+  {
+    "doc_id": "MON-006",
+    "path": "monitoring/quantile_06.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "term": "quantile"
+  },
+  {
+    "doc_id": "MON-007",
+    "path": "monitoring/burn_07.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "term": "burn"
+  },
+  {
+    "doc_id": "MON-008",
+    "path": "monitoring/budget_08.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "term": "budget"
+  },
+  {
+    "doc_id": "MON-009",
+    "path": "monitoring/scrape_09.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "term": "scrape"
+  },
+  {
+    "doc_id": "MON-010",
+    "path": "monitoring/cardinality_10.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "term": "cardinality"
+  },
+  {
+    "doc_id": "MON-011",
+    "path": "monitoring/threshold_11.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "term": "threshold"
+  },
+  {
+    "doc_id": "MON-OLD-003",
+    "path": "_log/superseded/monitoring_saturation_v1.html",
+    "spoke": "monitoring",
+    "status": "retired",
+    "term": "saturation"
+  },
+  {
+    "doc_id": "MON-INDEX-000",
+    "path": "monitoring/_index.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "term": ""
+  },
+  {
+    "doc_id": "PRO-001",
+    "path": "procurement/vendor_01.html",
+    "spoke": "procurement",
+    "status": "current",
+    "term": "vendor"
+  },
+  {
+    "doc_id": "PRO-002",
+    "path": "procurement/contract_02.html",
+    "spoke": "procurement",
+    "status": "current",
+    "term": "contract"
+  },
+  {
+    "doc_id": "PRO-003",
+    "path": "procurement/renewal_03.html",
+    "spoke": "procurement",
+    "status": "current",
+    "term": "renewal"
+  },
+  {
+    "doc_id": "PRO-004",
+    "path": "procurement/invoice_04.html",
+    "spoke": "procurement",
+    "status": "current",
+    "term": "invoice"
+  },
+  {
+    "doc_id": "PRO-005",
+    "path": "procurement/requisition_05.html",
+    "spoke": "procurement",
+    "status": "current",
+    "term": "requisition"
+  },
+  {
+    "doc_id": "PRO-006",
+    "path": "procurement/quotation_06.html",
+    "spoke": "procurement",
+    "status": "current",
+    "term": "quotation"
+  },
+  {
+    "doc_id": "PRO-007",
+    "path": "procurement/approval_07.html",
+    "spoke": "procurement",
+    "status": "current",
+    "term": "approval"
+  },
+  {
+    "doc_id": "PRO-008",
+    "path": "procurement/clause_08.html",
+    "spoke": "procurement",
+    "status": "current",
+    "term": "clause"
+  },
+  {
+    "doc_id": "PRO-009",
+    "path": "procurement/counterparty_09.html",
+    "spoke": "procurement",
+    "status": "current",
+    "term": "counterparty"
+  },
+  {
+    "doc_id": "PRO-010",
+    "path": "procurement/spend_10.html",
+    "spoke": "procurement",
+    "status": "current",
+    "term": "spend"
+  },
+  {
+    "doc_id": "PRO-011",
+    "path": "procurement/vendor_11.html",
+    "spoke": "procurement",
+    "status": "current",
+    "term": "vendor"
+  },
+  {
+    "doc_id": "PRO-OLD-003",
+    "path": "_log/superseded/procurement_renewal_v1.html",
+    "spoke": "procurement",
+    "status": "retired",
+    "term": "renewal"
+  },
+  {
+    "doc_id": "PRO-INDEX-000",
+    "path": "procurement/_index.html",
+    "spoke": "procurement",
+    "status": "current",
+    "term": ""
+  },
+  {
+    "doc_id": "MAIN-000",
+    "path": "index.html",
+    "spoke": "",
+    "status": "current",
+    "term": ""
+  }
+]

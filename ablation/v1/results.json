@@ -1,0 +1,836 @@
+[
+  {
+    "arm": "structured",
+    "correct": false,
+    "hits": 5,
+    "kind": "currency",
+    "probe": "currency-access",
+    "returned_retired": false,
+    "tier": 2,
+    "top": "ACC-INDEX-000"
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 5,
+    "kind": "ambiguity",
+    "probe": "ambiguity-access-procurement",
+    "spokes": [],
+    "tier": 2,
+    "top": "PRO-001"
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": true,
+    "hits": 4,
+    "kind": "content",
+    "probe": "content-procurement-requisition",
+    "tier": 1,
+    "top": "PRO-005"
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": true,
+    "hits": 5,
+    "kind": "content",
+    "probe": "content-access-offboarding",
+    "tier": 1,
+    "top": "ACC-005"
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 5,
+    "kind": "ambiguity",
+    "probe": "ambiguity-deploy-monitoring",
+    "spokes": [
+      "deploy",
+      "monitoring"
+    ],
+    "tier": 2,
+    "top": "DEP-INDEX-000"
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": true,
+    "hits": 5,
+    "kind": "content",
+    "probe": "content-deploy-cutover",
+    "tier": 1,
+    "top": "DEP-009"
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": true,
+    "hits": 5,
+    "kind": "content",
+    "probe": "content-retention-ledger",
+    "tier": 1,
+    "top": "RET-005"
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 4,
+    "kind": "content",
+    "probe": "content-access-rotation",
+    "tier": 1,
+    "top": "ACC-002"
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 2,
+    "kind": "supersession",
+    "probe": "supersession-retention",
+    "tier": 2,
+    "top": "RET-003"
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 5,
+    "kind": "ambiguity",
+    "probe": "ambiguity-incident-procurement",
+    "spokes": [
+      "incident",
+      "procurement"
+    ],
+    "tier": 2,
+    "top": "MAIN-000"
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 0,
+    "kind": "supersession",
+    "probe": "supersession-retention",
+    "tier": 2,
+    "top": null
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 3,
+    "kind": "content",
+    "probe": "content-retention-schedule",
+    "tier": 1,
+    "top": "RET-002"
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 0,
+    "kind": "refusal",
+    "probe": "refusal-6",
+    "tier": 1,
+    "top": null
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 5,
+    "kind": "content",
+    "probe": "content-monitoring-dashboard",
+    "tier": 1,
+    "top": "MON-002"
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 3,
+    "kind": "content",
+    "probe": "content-incident-severity",
+    "tier": 1,
+    "top": "INC-002"
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": true,
+    "hits": 4,
+    "kind": "content",
+    "probe": "content-access-provisioning",
+    "tier": 1,
+    "top": "ACC-009"
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 5,
+    "kind": "ambiguity",
+    "probe": "ambiguity-incident-monitoring",
+    "spokes": [],
+    "tier": 2,
+    "top": "INC-001"
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 4,
+    "kind": "currency",
+    "probe": "currency-incident",
+    "returned_retired": true,
+    "tier": 2,
+    "top": "INC-OLD-003"
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 4,
+    "kind": "content",
+    "probe": "content-monitoring-scrape",
+    "tier": 1,
+    "top": "MON-009"
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 5,
+    "kind": "currency",
+    "probe": "currency-retention",
+    "returned_retired": false,
+    "tier": 2,
+    "top": "RET-003"
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": true,
+    "hits": 5,
+    "kind": "content",
+    "probe": "content-procurement-counterparty",
+    "tier": 1,
+    "top": "PRO-009"
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": true,
+    "hits": 4,
+    "kind": "content",
+    "probe": "content-procurement-contract",
+    "tier": 1,
+    "top": "PRO-002"
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 5,
+    "kind": "ambiguity",
+    "probe": "ambiguity-retention-access",
+    "spokes": [],
+    "tier": 2,
+    "top": "ACC-011"
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": true,
+    "hits": 4,
+    "kind": "content",
+    "probe": "content-incident-escalation",
+    "tier": 1,
+    "top": "INC-005"
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 3,
+    "kind": "content",
+    "probe": "content-incident-escalation",
+    "tier": 1,
+    "top": "INC-005"
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 4,
+    "kind": "currency",
+    "probe": "currency-monitoring",
+    "returned_retired": true,
+    "tier": 2,
+    "top": "MON-OLD-003"
+  },
+  {
+    "arm": "structured",
+    "correct": false,
+    "hits": 5,
+    "kind": "refusal",
+    "probe": "refusal-4",
+    "tier": 1,
+    "top": "ACC-INDEX-000"
+  },
+  {
+    "arm": "stripped",
+    "correct": true,
+    "hits": 0,
+    "kind": "refusal",
+    "probe": "refusal-6",
+    "tier": 1,
+    "top": null
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 3,
+    "kind": "content",
+    "probe": "content-procurement-requisition",
+    "tier": 1,
+    "top": "PRO-005"
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 5,
+    "kind": "currency",
+    "probe": "currency-procurement",
+    "returned_retired": true,
+    "tier": 2,
+    "top": "PRO-OLD-003"
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 0,
+    "kind": "supersession",
+    "probe": "supersession-deploy",
+    "tier": 2,
+    "top": null
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 5,
+    "kind": "content",
+    "probe": "content-access-offboarding",
+    "tier": 1,
+    "top": "ACC-005"
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 2,
+    "kind": "supersession",
+    "probe": "supersession-monitoring",
+    "tier": 2,
+    "top": "MON-003"
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": true,
+    "hits": 4,
+    "kind": "content",
+    "probe": "content-retention-schedule",
+    "tier": 1,
+    "top": "RET-002"
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 0,
+    "kind": "refusal",
+    "probe": "refusal-3",
+    "tier": 1,
+    "top": null
+  },
+  {
+    "arm": "structured",
+    "correct": false,
+    "hits": 5,
+    "kind": "currency",
+    "probe": "currency-monitoring",
+    "returned_retired": false,
+    "tier": 2,
+    "top": "MON-INDEX-000"
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": true,
+    "hits": 5,
+    "kind": "content",
+    "probe": "content-monitoring-scrape",
+    "tier": 1,
+    "top": "MON-009"
+  },
+  {
+    "arm": "stripped",
+    "correct": true,
+    "hits": 0,
+    "kind": "refusal",
+    "probe": "refusal-1",
+    "tier": 1,
+    "top": null
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 5,
+    "kind": "content",
+    "probe": "content-procurement-counterparty",
+    "tier": 1,
+    "top": "PRO-009"
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 0,
+    "kind": "refusal",
+    "probe": "refusal-5",
+    "tier": 1,
+    "top": null
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 5,
+    "kind": "ambiguity",
+    "probe": "ambiguity-deploy-monitoring",
+    "spokes": [],
+    "tier": 2,
+    "top": "DEP-001"
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 2,
+    "kind": "content",
+    "probe": "content-retention-register",
+    "tier": 1,
+    "top": "RET-009"
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 5,
+    "kind": "currency",
+    "probe": "currency-incident",
+    "returned_retired": false,
+    "tier": 2,
+    "top": "INC-003"
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 5,
+    "kind": "currency",
+    "probe": "currency-procurement",
+    "returned_retired": false,
+    "tier": 2,
+    "top": "PRO-003"
+  },
+  {
+    "arm": "stripped",
+    "correct": true,
+    "hits": 0,
+    "kind": "refusal",
+    "probe": "refusal-3",
+    "tier": 1,
+    "top": null
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 5,
+    "kind": "ambiguity",
+    "probe": "ambiguity-access-procurement",
+    "spokes": [
+      "access",
+      "procurement"
+    ],
+    "tier": 2,
+    "top": "MAIN-000"
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 5,
+    "kind": "ambiguity",
+    "probe": "ambiguity-incident-procurement",
+    "spokes": [],
+    "tier": 2,
+    "top": "INC-001"
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 3,
+    "kind": "content",
+    "probe": "content-access-provisioning",
+    "tier": 1,
+    "top": "ACC-009"
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 5,
+    "kind": "content",
+    "probe": "content-deploy-cutover",
+    "tier": 1,
+    "top": "DEP-009"
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 2,
+    "kind": "supersession",
+    "probe": "supersession-deploy",
+    "tier": 2,
+    "top": "DEP-003"
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": true,
+    "hits": 4,
+    "kind": "content",
+    "probe": "content-monitoring-probe",
+    "tier": 1,
+    "top": "MON-005"
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 4,
+    "kind": "currency",
+    "probe": "currency-retention",
+    "returned_retired": true,
+    "tier": 2,
+    "top": "RET-OLD-003"
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 0,
+    "kind": "supersession",
+    "probe": "supersession-procurement",
+    "tier": 2,
+    "top": null
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 0,
+    "kind": "refusal",
+    "probe": "refusal-2",
+    "tier": 1,
+    "top": null
+  },
+  {
+    "arm": "stripped",
+    "correct": true,
+    "hits": 0,
+    "kind": "refusal",
+    "probe": "refusal-5",
+    "tier": 1,
+    "top": null
+  },
+  {
+    "arm": "stripped",
+    "correct": true,
+    "hits": 0,
+    "kind": "refusal",
+    "probe": "refusal-4",
+    "tier": 1,
+    "top": null
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 5,
+    "kind": "ambiguity",
+    "probe": "ambiguity-incident-monitoring",
+    "spokes": [
+      "incident",
+      "monitoring"
+    ],
+    "tier": 2,
+    "top": "INC-INDEX-000"
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": false,
+    "hits": 4,
+    "kind": "content",
+    "probe": "content-incident-severity",
+    "tier": 1,
+    "top": "INC-INDEX-000"
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": true,
+    "hits": 3,
+    "kind": "content",
+    "probe": "content-deploy-canary",
+    "tier": 1,
+    "top": "DEP-002"
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": true,
+    "hits": 5,
+    "kind": "content",
+    "probe": "content-monitoring-dashboard",
+    "tier": 1,
+    "top": "MON-002"
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 2,
+    "kind": "supersession",
+    "probe": "supersession-incident",
+    "tier": 2,
+    "top": "INC-003"
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 1,
+    "kind": "content",
+    "probe": "content-incident-blameless",
+    "tier": 1,
+    "top": "INC-009"
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 0,
+    "kind": "supersession",
+    "probe": "supersession-monitoring",
+    "tier": 2,
+    "top": null
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 2,
+    "kind": "supersession",
+    "probe": "supersession-access",
+    "tier": 2,
+    "top": "ACC-003"
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": true,
+    "hits": 4,
+    "kind": "content",
+    "probe": "content-deploy-rollout",
+    "tier": 1,
+    "top": "DEP-005"
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 5,
+    "kind": "currency",
+    "probe": "currency-deploy",
+    "returned_retired": true,
+    "tier": 2,
+    "top": "DEP-OLD-003"
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 3,
+    "kind": "content",
+    "probe": "content-procurement-contract",
+    "tier": 1,
+    "top": "PRO-002"
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 3,
+    "kind": "content",
+    "probe": "content-monitoring-probe",
+    "tier": 1,
+    "top": "MON-005"
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 4,
+    "kind": "currency",
+    "probe": "currency-access",
+    "returned_retired": true,
+    "tier": 2,
+    "top": "ACC-OLD-003"
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 5,
+    "kind": "ambiguity",
+    "probe": "ambiguity-retention-access",
+    "spokes": [
+      "access",
+      "retention"
+    ],
+    "tier": 2,
+    "top": "MAIN-000"
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": true,
+    "hits": 3,
+    "kind": "content",
+    "probe": "content-retention-register",
+    "tier": 1,
+    "top": "RET-009"
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 0,
+    "kind": "refusal",
+    "probe": "refusal-1",
+    "tier": 1,
+    "top": null
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 5,
+    "kind": "ambiguity",
+    "probe": "ambiguity-deploy-retention",
+    "spokes": [
+      "deploy",
+      "retention"
+    ],
+    "tier": 2,
+    "top": "MAIN-000"
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 5,
+    "kind": "currency",
+    "probe": "currency-deploy",
+    "returned_retired": false,
+    "tier": 2,
+    "top": "DEP-003"
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 5,
+    "kind": "content",
+    "probe": "content-retention-ledger",
+    "tier": 1,
+    "top": "RET-005"
+  },
+  {
+    "arm": "stripped",
+    "correct": true,
+    "hits": 0,
+    "kind": "refusal",
+    "probe": "refusal-2",
+    "tier": 1,
+    "top": null
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": false,
+    "hits": 5,
+    "kind": "content",
+    "probe": "content-access-rotation",
+    "tier": 1,
+    "top": "ACC-INDEX-000"
+  },
+  {
+    "arm": "structured",
+    "correct": true,
+    "hits": 2,
+    "kind": "supersession",
+    "probe": "supersession-procurement",
+    "tier": 2,
+    "top": "PRO-003"
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 3,
+    "kind": "content",
+    "probe": "content-deploy-rollout",
+    "tier": 1,
+    "top": "DEP-005"
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 0,
+    "kind": "supersession",
+    "probe": "supersession-incident",
+    "tier": 2,
+    "top": null
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 5,
+    "kind": "ambiguity",
+    "probe": "ambiguity-deploy-retention",
+    "spokes": [],
+    "tier": 2,
+    "top": "DEP-001"
+  },
+  {
+    "arm": "structured",
+    "at3": true,
+    "correct": true,
+    "hits": 2,
+    "kind": "content",
+    "probe": "content-incident-blameless",
+    "tier": 1,
+    "top": "INC-009"
+  },
+  {
+    "arm": "stripped",
+    "correct": false,
+    "hits": 0,
+    "kind": "supersession",
+    "probe": "supersession-access",
+    "tier": 2,
+    "top": null
+  },
+  {
+    "arm": "stripped",
+    "at3": true,
+    "correct": true,
+    "hits": 2,
+    "kind": "content",
+    "probe": "content-deploy-canary",
+    "tier": 1,
+    "top": "DEP-002"
+  }
+]
