@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Deployment Procedure</title>
+  <link rel="stylesheet" href="../style.css">
+  <meta name="mplpb:id" content="OPS-DEPLOY-002">
+  <meta name="mplpb:corpus" content="CORPUS-A">
+  <meta name="mplpb:category" content="Procedure">
+  <meta name="mplpb:scope" content="How a release is promoted from staging to production">
+  <meta name="mplpb:status" content="current">
+  <meta name="mplpb:version" content="2026-08-30T00:00Z v2">
+  <meta name="mplpb:substrate" content="local">
+  <meta name="mplpb:supersedes" content="OPS-DEPLOY-001">
+  <meta name="mplpb:origin" content="human">
+  <meta name="mplpb:origin_depth" content="0">
+</head>
+<body>
+<main>
+<h1>Deployment Procedure</h1>
+<p>Promotion is gated on a green pipeline and a held release lease.
+The lease is presented at the point of promotion, not at the point of
+checking, so that a stalled promoter cannot complete a write it was no
+longer authorised to make.</p>
+<p>Supersedes <code>OPS-DEPLOY-001</code>, retained under
+<code>_log/superseded/</code>.</p>
+</main>
+<nav class="back"><a href="_index.html" rel="index">Operations</a> · <a href="../index.html" rel="up">Main Index</a></nav>
+</body>
+</html>
