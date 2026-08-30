@@ -1,0 +1,713 @@
+[
+  {
+    "doc_id": "DEP-001",
+    "path": "deploy/promotion_01.html",
+    "spoke": "deploy",
+    "status": "current",
+    "primary": "promotion",
+    "trigger": "ship a finished change",
+    "pair": null
+  },
+  {
+    "doc_id": "DEP-002",
+    "path": "deploy/canary_02.html",
+    "spoke": "deploy",
+    "status": "current",
+    "primary": "canary",
+    "trigger": "launch to everyone at once",
+    "pair": null
+  },
+  {
+    "doc_id": "DEP-003",
+    "path": "deploy/artifact_03.html",
+    "spoke": "deploy",
+    "status": "current",
+    "primary": "artifact",
+    "trigger": "back out something already live",
+    "pair": null
+  },
+  {
+    "doc_id": "DEP-004",
+    "path": "deploy/staging_04.html",
+    "spoke": "deploy",
+    "status": "current",
+    "primary": "staging",
+    "trigger": "undo last night's release",
+    "pair": null
+  },
+  {
+    "doc_id": "DEP-005",
+    "path": "deploy/rollout_05.html",
+    "spoke": "deploy",
+    "status": "current",
+    "primary": "rollout",
+    "trigger": "try it on a few users first",
+    "pair": null
+  },
+  {
+    "doc_id": "DEP-006",
+    "path": "deploy/cutover_06.html",
+    "spoke": "deploy",
+    "status": "current",
+    "primary": "cutover",
+    "trigger": "hold all changes for a week",
+    "pair": null
+  },
+  {
+    "doc_id": "DEP-007",
+    "path": "deploy/bake_07.html",
+    "spoke": "deploy",
+    "status": "current",
+    "primary": "bake",
+    "trigger": "check nothing broke before continuing",
+    "pair": null
+  },
+  {
+    "doc_id": "DEP-008",
+    "path": "deploy/manifest_08.html",
+    "spoke": "deploy",
+    "status": "current",
+    "primary": "manifest",
+    "trigger": "know exactly which build is running",
+    "pair": null
+  },
+  {
+    "doc_id": "DEP-009",
+    "path": "deploy/digest_09.html",
+    "spoke": "deploy",
+    "status": "current",
+    "primary": "digest",
+    "trigger": "make sure the same thing runs everywhere",
+    "pair": null
+  },
+  {
+    "doc_id": "DEP-010",
+    "path": "deploy/pinning_10.html",
+    "spoke": "deploy",
+    "status": "current",
+    "primary": "pinning",
+    "trigger": "push urgently outside the normal window",
+    "pair": null
+  },
+  {
+    "doc_id": "DEP-011",
+    "path": "deploy/promotion_11.html",
+    "spoke": "deploy",
+    "status": "current",
+    "primary": "promotion",
+    "trigger": "push urgently outside the normal window",
+    "pair": "DEP-001"
+  },
+  {
+    "doc_id": "DEP-OLD-003",
+    "path": "_log/superseded/deploy_artifact_v1.html",
+    "spoke": "deploy",
+    "status": "retired",
+    "primary": "artifact",
+    "trigger": "back out something already live",
+    "pair": null
+  },
+  {
+    "doc_id": "DEP-INDEX-000",
+    "path": "deploy/_index.html",
+    "spoke": "deploy",
+    "status": "current",
+    "primary": "",
+    "trigger": "",
+    "pair": null
+  },
+  {
+    "doc_id": "RET-001",
+    "path": "retention/disposal_01.html",
+    "spoke": "retention",
+    "status": "current",
+    "primary": "disposal",
+    "trigger": "get rid of things past their date",
+    "pair": null
+  },
+  {
+    "doc_id": "RET-002",
+    "path": "retention/custody_02.html",
+    "spoke": "retention",
+    "status": "current",
+    "primary": "custody",
+    "trigger": "prove who has been holding something",
+    "pair": null
+  },
+  {
+    "doc_id": "RET-003",
+    "path": "retention/tranche_03.html",
+    "spoke": "retention",
+    "status": "current",
+    "primary": "tranche",
+    "trigger": "handle a large batch arriving at once",
+    "pair": null
+  },
+  {
+    "doc_id": "RET-004",
+    "path": "retention/purge_04.html",
+    "spoke": "retention",
+    "status": "current",
+    "primary": "purge",
+    "trigger": "clear out storage that is filling up",
+    "pair": null
+  },
+  {
+    "doc_id": "RET-005",
+    "path": "retention/escrow_05.html",
+    "spoke": "retention",
+    "status": "current",
+    "primary": "escrow",
+    "trigger": "leave something with a neutral third party",
+    "pair": null
+  },
+  {
+    "doc_id": "RET-006",
+    "path": "retention/sequestration_06.html",
+    "spoke": "retention",
+    "status": "current",
+    "primary": "sequestration",
+    "trigger": "set material aside because lawyers asked",
+    "pair": null
+  },
+  {
+    "doc_id": "RET-007",
+    "path": "retention/immutability_07.html",
+    "spoke": "retention",
+    "status": "current",
+    "primary": "immutability",
+    "trigger": "stop anyone editing the record",
+    "pair": null
+  },
+  {
+    "doc_id": "RET-008",
+    "path": "retention/chain_08.html",
+    "spoke": "retention",
+    "status": "current",
+    "primary": "chain",
+    "trigger": "show nothing was altered along the way",
+    "pair": null
+  },
+  {
+    "doc_id": "RET-009",
+    "path": "retention/seal_09.html",
+    "spoke": "retention",
+    "status": "current",
+    "primary": "seal",
+    "trigger": "close something so it cannot be reopened",
+    "pair": null
+  },
+  {
+    "doc_id": "RET-010",
+    "path": "retention/vault_10.html",
+    "spoke": "retention",
+    "status": "current",
+    "primary": "vault",
+    "trigger": "keep the only copy somewhere very safe",
+    "pair": null
+  },
+  {
+    "doc_id": "RET-011",
+    "path": "retention/disposal_11.html",
+    "spoke": "retention",
+    "status": "current",
+    "primary": "disposal",
+    "trigger": "keep the only copy somewhere very safe",
+    "pair": "RET-001"
+  },
+  {
+    "doc_id": "RET-OLD-003",
+    "path": "_log/superseded/retention_tranche_v1.html",
+    "spoke": "retention",
+    "status": "retired",
+    "primary": "tranche",
+    "trigger": "handle a large batch arriving at once",
+    "pair": null
+  },
+  {
+    "doc_id": "RET-INDEX-000",
+    "path": "retention/_index.html",
+    "spoke": "retention",
+    "status": "current",
+    "primary": "",
+    "trigger": "",
+    "pair": null
+  },
+  {
+    "doc_id": "INC-001",
+    "path": "incident/severity_01.html",
+    "spoke": "incident",
+    "status": "current",
+    "primary": "severity",
+    "trigger": "work out how bad this is",
+    "pair": null
+  },
+  {
+    "doc_id": "INC-002",
+    "path": "incident/paging_02.html",
+    "spoke": "incident",
+    "status": "current",
+    "primary": "paging",
+    "trigger": "wake somebody up at night",
+    "pair": null
+  },
+  {
+    "doc_id": "INC-003",
+    "path": "incident/postmortem_03.html",
+    "spoke": "incident",
+    "status": "current",
+    "primary": "postmortem",
+    "trigger": "write up what happened afterwards",
+    "pair": null
+  },
+  {
+    "doc_id": "INC-004",
+    "path": "incident/escalation_04.html",
+    "spoke": "incident",
+    "status": "current",
+    "primary": "escalation",
+    "trigger": "get more senior people involved",
+    "pair": null
+  },
+  {
+    "doc_id": "INC-005",
+    "path": "incident/commander_05.html",
+    "spoke": "incident",
+    "status": "current",
+    "primary": "commander",
+    "trigger": "decide who is running this",
+    "pair": null
+  },
+  {
+    "doc_id": "INC-006",
+    "path": "incident/mitigation_06.html",
+    "spoke": "incident",
+    "status": "current",
+    "primary": "mitigation",
+    "trigger": "stop the bleeding before fixing properly",
+    "pair": null
+  },
+  {
+    "doc_id": "INC-007",
+    "path": "incident/blameless_07.html",
+    "spoke": "incident",
+    "status": "current",
+    "primary": "blameless",
+    "trigger": "review without blaming anyone",
+    "pair": null
+  },
+  {
+    "doc_id": "INC-008",
+    "path": "incident/triage_08.html",
+    "spoke": "incident",
+    "status": "current",
+    "primary": "triage",
+    "trigger": "sort many broken things by urgency",
+    "pair": null
+  },
+  {
+    "doc_id": "INC-009",
+    "path": "incident/handoff_09.html",
+    "spoke": "incident",
+    "status": "current",
+    "primary": "handoff",
+    "trigger": "pass this to the next shift",
+    "pair": null
+  },
+  {
+    "doc_id": "INC-010",
+    "path": "incident/stand-down_10.html",
+    "spoke": "incident",
+    "status": "current",
+    "primary": "stand-down",
+    "trigger": "declare that it is finally over",
+    "pair": null
+  },
+  {
+    "doc_id": "INC-011",
+    "path": "incident/severity_11.html",
+    "spoke": "incident",
+    "status": "current",
+    "primary": "severity",
+    "trigger": "declare that it is finally over",
+    "pair": "INC-001"
+  },
+  {
+    "doc_id": "INC-OLD-003",
+    "path": "_log/superseded/incident_postmortem_v1.html",
+    "spoke": "incident",
+    "status": "retired",
+    "primary": "postmortem",
+    "trigger": "write up what happened afterwards",
+    "pair": null
+  },
+  {
+    "doc_id": "INC-INDEX-000",
+    "path": "incident/_index.html",
+    "spoke": "incident",
+    "status": "current",
+    "primary": "",
+    "trigger": "",
+    "pair": null
+  },
+  {
+    "doc_id": "ACC-001",
+    "path": "access/credential_01.html",
+    "spoke": "access",
+    "status": "current",
+    "primary": "credential",
+    "trigger": "give a new starter what they need",
+    "pair": null
+  },
+  {
+    "doc_id": "ACC-002",
+    "path": "access/rotation_02.html",
+    "spoke": "access",
+    "status": "current",
+    "primary": "rotation",
+    "trigger": "change secrets on a regular cycle",
+    "pair": null
+  },
+  {
+    "doc_id": "ACC-003",
+    "path": "access/revocation_03.html",
+    "spoke": "access",
+    "status": "current",
+    "primary": "revocation",
+    "trigger": "cut somebody off after they leave",
+    "pair": null
+  },
+  {
+    "doc_id": "ACC-004",
+    "path": "access/entitlement_04.html",
+    "spoke": "access",
+    "status": "current",
+    "primary": "entitlement",
+    "trigger": "work out who is allowed to see what",
+    "pair": null
+  },
+  {
+    "doc_id": "ACC-005",
+    "path": "access/attestation_05.html",
+    "spoke": "access",
+    "status": "current",
+    "primary": "attestation",
+    "trigger": "confirm the list is still correct",
+    "pair": null
+  },
+  {
+    "doc_id": "ACC-006",
+    "path": "access/provisioning_06.html",
+    "spoke": "access",
+    "status": "current",
+    "primary": "provisioning",
+    "trigger": "set somebody up on day one",
+    "pair": null
+  },
+  {
+    "doc_id": "ACC-007",
+    "path": "access/quorum_07.html",
+    "spoke": "access",
+    "status": "current",
+    "primary": "quorum",
+    "trigger": "require more than one person to agree",
+    "pair": null
+  },
+  {
+    "doc_id": "ACC-008",
+    "path": "access/principal_08.html",
+    "spoke": "access",
+    "status": "current",
+    "primary": "principal",
+    "trigger": "represent a service rather than a person",
+    "pair": null
+  },
+  {
+    "doc_id": "ACC-009",
+    "path": "access/assertion_09.html",
+    "spoke": "access",
+    "status": "current",
+    "primary": "assertion",
+    "trigger": "prove identity to another system",
+    "pair": null
+  },
+  {
+    "doc_id": "ACC-010",
+    "path": "access/scoping_10.html",
+    "spoke": "access",
+    "status": "current",
+    "primary": "scoping",
+    "trigger": "limit permission to one small area",
+    "pair": null
+  },
+  {
+    "doc_id": "ACC-011",
+    "path": "access/credential_11.html",
+    "spoke": "access",
+    "status": "current",
+    "primary": "credential",
+    "trigger": "limit permission to one small area",
+    "pair": "ACC-001"
+  },
+  {
+    "doc_id": "ACC-OLD-003",
+    "path": "_log/superseded/access_revocation_v1.html",
+    "spoke": "access",
+    "status": "retired",
+    "primary": "revocation",
+    "trigger": "cut somebody off after they leave",
+    "pair": null
+  },
+  {
+    "doc_id": "ACC-INDEX-000",
+    "path": "access/_index.html",
+    "spoke": "access",
+    "status": "current",
+    "primary": "",
+    "trigger": "",
+    "pair": null
+  },
+  {
+    "doc_id": "MON-001",
+    "path": "monitoring/threshold_01.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "primary": "threshold",
+    "trigger": "decide what number should trigger an alarm",
+    "pair": null
+  },
+  {
+    "doc_id": "MON-002",
+    "path": "monitoring/saturation_02.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "primary": "saturation",
+    "trigger": "tell whether something is running out of room",
+    "pair": null
+  },
+  {
+    "doc_id": "MON-003",
+    "path": "monitoring/quantile_03.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "primary": "quantile",
+    "trigger": "describe the slowest few rather than the average",
+    "pair": null
+  },
+  {
+    "doc_id": "MON-004",
+    "path": "monitoring/burn_04.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "primary": "burn",
+    "trigger": "tell how fast we are using up our allowance",
+    "pair": null
+  },
+  {
+    "doc_id": "MON-005",
+    "path": "monitoring/scrape_05.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "primary": "scrape",
+    "trigger": "collect numbers from somewhere on a timer",
+    "pair": null
+  },
+  {
+    "doc_id": "MON-006",
+    "path": "monitoring/cardinality_06.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "primary": "cardinality",
+    "trigger": "handle too many distinct label values",
+    "pair": null
+  },
+  {
+    "doc_id": "MON-007",
+    "path": "monitoring/histogram_07.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "primary": "histogram",
+    "trigger": "show the spread rather than one figure",
+    "pair": null
+  },
+  {
+    "doc_id": "MON-008",
+    "path": "monitoring/sampling_08.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "primary": "sampling",
+    "trigger": "keep only some of the data to save space",
+    "pair": null
+  },
+  {
+    "doc_id": "MON-009",
+    "path": "monitoring/aggregation_09.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "primary": "aggregation",
+    "trigger": "roll many small numbers into one",
+    "pair": null
+  },
+  {
+    "doc_id": "MON-010",
+    "path": "monitoring/retention-window_10.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "primary": "retention-window",
+    "trigger": "decide how long to keep old measurements",
+    "pair": null
+  },
+  {
+    "doc_id": "MON-011",
+    "path": "monitoring/threshold_11.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "primary": "threshold",
+    "trigger": "decide how long to keep old measurements",
+    "pair": "MON-001"
+  },
+  {
+    "doc_id": "MON-OLD-003",
+    "path": "_log/superseded/monitoring_quantile_v1.html",
+    "spoke": "monitoring",
+    "status": "retired",
+    "primary": "quantile",
+    "trigger": "describe the slowest few rather than the average",
+    "pair": null
+  },
+  {
+    "doc_id": "MON-INDEX-000",
+    "path": "monitoring/_index.html",
+    "spoke": "monitoring",
+    "status": "current",
+    "primary": "",
+    "trigger": "",
+    "pair": null
+  },
+  {
+    "doc_id": "PRO-001",
+    "path": "procurement/requisition_01.html",
+    "spoke": "procurement",
+    "status": "current",
+    "primary": "requisition",
+    "trigger": "ask for permission to buy something",
+    "pair": null
+  },
+  {
+    "doc_id": "PRO-002",
+    "path": "procurement/quotation_02.html",
+    "spoke": "procurement",
+    "status": "current",
+    "primary": "quotation",
+    "trigger": "get prices from more than one place",
+    "pair": null
+  },
+  {
+    "doc_id": "PRO-003",
+    "path": "procurement/counterparty_03.html",
+    "spoke": "procurement",
+    "status": "current",
+    "primary": "counterparty",
+    "trigger": "find out who we are actually dealing with",
+    "pair": null
+  },
+  {
+    "doc_id": "PRO-004",
+    "path": "procurement/clause_04.html",
+    "spoke": "procurement",
+    "status": "current",
+    "primary": "clause",
+    "trigger": "change one specific term of an agreement",
+    "pair": null
+  },
+  {
+    "doc_id": "PRO-005",
+    "path": "procurement/novation_05.html",
+    "spoke": "procurement",
+    "status": "current",
+    "primary": "novation",
+    "trigger": "move an agreement to a different company",
+    "pair": null
+  },
+  {
+    "doc_id": "PRO-006",
+    "path": "procurement/indemnity_06.html",
+    "spoke": "procurement",
+    "status": "current",
+    "primary": "indemnity",
+    "trigger": "decide who pays if it goes wrong",
+    "pair": null
+  },
+  {
+    "doc_id": "PRO-007",
+    "path": "procurement/schedule-of-rates_07.html",
+    "spoke": "procurement",
+    "status": "current",
+    "primary": "schedule-of-rates",
+    "trigger": "agree prices for work not yet specified",
+    "pair": null
+  },
+  {
+    "doc_id": "PRO-008",
+    "path": "procurement/milestone_08.html",
+    "spoke": "procurement",
+    "status": "current",
+    "primary": "milestone",
+    "trigger": "pay only when a stage is finished",
+    "pair": null
+  },
+  {
+    "doc_id": "PRO-009",
+    "path": "procurement/retainer_09.html",
+    "spoke": "procurement",
+    "status": "current",
+    "primary": "retainer",
+    "trigger": "keep somebody available without fixed work",
+    "pair": null
+  },
+  {
+    "doc_id": "PRO-010",
+    "path": "procurement/amendment_10.html",
+    "spoke": "procurement",
+    "status": "current",
+    "primary": "amendment",
+    "trigger": "alter an agreement already signed",
+    "pair": null
+  },
+  {
+    "doc_id": "PRO-011",
+    "path": "procurement/requisition_11.html",
+    "spoke": "procurement",
+    "status": "current",
+    "primary": "requisition",
+    "trigger": "alter an agreement already signed",
+    "pair": "PRO-001"
+  },
+  {
+    "doc_id": "PRO-OLD-003",
+    "path": "_log/superseded/procurement_counterparty_v1.html",
+    "spoke": "procurement",
+    "status": "retired",
+    "primary": "counterparty",
+    "trigger": "find out who we are actually dealing with",
+    "pair": null
+  },
+  {
+    "doc_id": "PRO-INDEX-000",
+    "path": "procurement/_index.html",
+    "spoke": "procurement",
+    "status": "current",
+    "primary": "",
+    "trigger": "",
+    "pair": null
+  },
+  {
+    "doc_id": "MAIN-000",
+    "path": "index.html",
+    "spoke": "",
+    "status": "current",
+    "primary": "",
+    "trigger": "",
+    "pair": null
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "curve": {
+    "B: full fallback": [
+      95.83333333333333,
+      79.16666666666667,
+      79.16666666666667,
+      0.0
+    ],
+    "C: prose fallback": [
+      95.83333333333333,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "stripped": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "floor_ok": true,
+  "levels": [
+    "1.00",
+    "0.50",
+    "0.33",
+    "0.00"
+  ],
+  "neutral_words": [
+    "lantern",
+    "orchard",
+    "basalt",
+    "trombone",
+    "quilt",
+    "meridian",
+    "walnut",
+    "cistern",
+    "plover",
+    "gantry",
+    "sorrel",
+    "kiln"
+  ]
+}

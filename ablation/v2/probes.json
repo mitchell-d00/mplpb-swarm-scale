@@ -1,0 +1,730 @@
+{
+  "document": "Ablation run v2 \u2014 MPLPB-TEST-014 v2",
+  "note": "NOT MPLPB-SWARM-013 \u00a712.5. Four requirements remain unmet; see the ledger \u00a71.",
+  "predictions": [
+    "P0  VALIDITY CHECK, pre-registered. If the stripped arm again scores 100% on any tier-1 class, the instrument still has no headroom on that class and the class is void for this run. v1 failed exactly here and the failure was only noticed after reporting.",
+    "P1  Lookup will be near parity. Both arms hold identical body prose and the query is drawn from it. This class exists as a baseline and to make P0 checkable, not to discriminate.",
+    "P2  Paraphrase is the class the whole claim rests on. Queries are drawn from trigger vocabulary, which the structured arm indexes as when_to_use and the stripped arm does not hold at all. If structure does not win here it does not win anywhere, and the correct conclusion would be that declared scope is decoration for retrieval purposes.",
+    "P3  Discriminate: the near-duplicate twins share all body vocabulary and differ only in trigger. The stripped arm should sit near chance, around 50%. A stripped arm scoring well above chance would mean the twins are separable from prose alone and the class is badly built.",
+    "P4  Refusal may still favour the stripped arm. Declared scope and trigger text are additional indexable surface and therefore additional false-positive surface under an any-term fallback. Two mitigations are run as declared variants: excluding navigation categories (FM-L12) and excluding metadata fields from the broad fallback pass.",
+    "P5  CONFOUND, to be measured not argued. The same author wrote the trigger conditions and the probes, so a paraphrase win may be authorial artifact. The harness reports median probe-to-trigger and probe-to-body overlap. If probe-to-trigger overlap exceeds 0.5, the P2 result is substantially planted and must be discounted in the ledger rather than reported as a structural finding."
+  ],
+  "probes": [
+    {
+      "expect_answer": true,
+      "expect_doc": "DEP-002",
+      "id": "lookup-deploy-2",
+      "kind": "lookup",
+      "query": "canary step in deploy",
+      "tier": 1
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "DEP-005",
+      "id": "lookup-deploy-5",
+      "kind": "lookup",
+      "query": "rollout step in deploy",
+      "tier": 1
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "DEP-009",
+      "id": "lookup-deploy-9",
+      "kind": "lookup",
+      "query": "digest step in deploy",
+      "tier": 1
+    },
+    {
+      "body_text": "canary",
+      "expect_answer": true,
+      "expect_doc": "DEP-002",
+      "id": "paraphrase-deploy-2",
+      "kind": "paraphrase",
+      "query": "how do I launch everyone",
+      "tier": 1,
+      "trigger_text": "launch to everyone at once"
+    },
+    {
+      "body_text": "rollout",
+      "expect_answer": true,
+      "expect_doc": "DEP-005",
+      "id": "paraphrase-deploy-5",
+      "kind": "paraphrase",
+      "query": "how do I try few",
+      "tier": 1,
+      "trigger_text": "try it on a few users first"
+    },
+    {
+      "body_text": "manifest",
+      "expect_answer": true,
+      "expect_doc": "DEP-008",
+      "id": "paraphrase-deploy-8",
+      "kind": "paraphrase",
+      "query": "how do I know exactly",
+      "tier": 1,
+      "trigger_text": "know exactly which build is running"
+    },
+    {
+      "body_text": "digest",
+      "expect_answer": true,
+      "expect_doc": "DEP-009",
+      "id": "paraphrase-deploy-9",
+      "kind": "paraphrase",
+      "query": "how do I make sure",
+      "tier": 1,
+      "trigger_text": "make sure the same thing runs everywhere"
+    },
+    {
+      "body_text": "promotion",
+      "expect_answer": true,
+      "expect_doc": "DEP-011",
+      "forbid_doc": "DEP-001",
+      "id": "discriminate-deploy-twin",
+      "kind": "discriminate",
+      "query": "how do I push urgently",
+      "tier": 1,
+      "trigger_text": "push urgently outside the normal window"
+    },
+    {
+      "body_text": "promotion",
+      "expect_answer": true,
+      "expect_doc": "DEP-001",
+      "forbid_doc": "DEP-011",
+      "id": "discriminate-deploy-base",
+      "kind": "discriminate",
+      "query": "how do I ship finished",
+      "tier": 1,
+      "trigger_text": "ship a finished change"
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "DEP-003",
+      "forbid_doc": "DEP-OLD-003",
+      "id": "currency-deploy",
+      "kind": "currency",
+      "query": "artifact step in deploy",
+      "tier": 2
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "DEP-003",
+      "id": "supersession-deploy",
+      "kind": "supersession",
+      "query": "DEP-OLD-003",
+      "tier": 2
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "RET-002",
+      "id": "lookup-retention-2",
+      "kind": "lookup",
+      "query": "custody step in retention",
+      "tier": 1
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "RET-005",
+      "id": "lookup-retention-5",
+      "kind": "lookup",
+      "query": "escrow step in retention",
+      "tier": 1
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "RET-009",
+      "id": "lookup-retention-9",
+      "kind": "lookup",
+      "query": "seal step in retention",
+      "tier": 1
+    },
+    {
+      "body_text": "custody",
+      "expect_answer": true,
+      "expect_doc": "RET-002",
+      "id": "paraphrase-retention-2",
+      "kind": "paraphrase",
+      "query": "how do I prove been",
+      "tier": 1,
+      "trigger_text": "prove who has been holding something"
+    },
+    {
+      "body_text": "escrow",
+      "expect_answer": true,
+      "expect_doc": "RET-005",
+      "id": "paraphrase-retention-5",
+      "kind": "paraphrase",
+      "query": "how do I leave something",
+      "tier": 1,
+      "trigger_text": "leave something with a neutral third party"
+    },
+    {
+      "body_text": "chain",
+      "expect_answer": true,
+      "expect_doc": "RET-008",
+      "id": "paraphrase-retention-8",
+      "kind": "paraphrase",
+      "query": "how do I show nothing",
+      "tier": 1,
+      "trigger_text": "show nothing was altered along the way"
+    },
+    {
+      "body_text": "seal",
+      "expect_answer": true,
+      "expect_doc": "RET-009",
+      "id": "paraphrase-retention-9",
+      "kind": "paraphrase",
+      "query": "how do I close something",
+      "tier": 1,
+      "trigger_text": "close something so it cannot be reopened"
+    },
+    {
+      "body_text": "disposal",
+      "expect_answer": true,
+      "expect_doc": "RET-011",
+      "forbid_doc": "RET-001",
+      "id": "discriminate-retention-twin",
+      "kind": "discriminate",
+      "query": "how do I keep only",
+      "tier": 1,
+      "trigger_text": "keep the only copy somewhere very safe"
+    },
+    {
+      "body_text": "disposal",
+      "expect_answer": true,
+      "expect_doc": "RET-001",
+      "forbid_doc": "RET-011",
+      "id": "discriminate-retention-base",
+      "kind": "discriminate",
+      "query": "how do I get rid",
+      "tier": 1,
+      "trigger_text": "get rid of things past their date"
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "RET-003",
+      "forbid_doc": "RET-OLD-003",
+      "id": "currency-retention",
+      "kind": "currency",
+      "query": "tranche step in retention",
+      "tier": 2
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "RET-003",
+      "id": "supersession-retention",
+      "kind": "supersession",
+      "query": "RET-OLD-003",
+      "tier": 2
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "INC-002",
+      "id": "lookup-incident-2",
+      "kind": "lookup",
+      "query": "paging step in incident",
+      "tier": 1
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "INC-005",
+      "id": "lookup-incident-5",
+      "kind": "lookup",
+      "query": "commander step in incident",
+      "tier": 1
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "INC-009",
+      "id": "lookup-incident-9",
+      "kind": "lookup",
+      "query": "handoff step in incident",
+      "tier": 1
+    },
+    {
+      "body_text": "paging",
+      "expect_answer": true,
+      "expect_doc": "INC-002",
+      "id": "paraphrase-incident-2",
+      "kind": "paraphrase",
+      "query": "how do I wake somebody",
+      "tier": 1,
+      "trigger_text": "wake somebody up at night"
+    },
+    {
+      "body_text": "commander",
+      "expect_answer": true,
+      "expect_doc": "INC-005",
+      "id": "paraphrase-incident-5",
+      "kind": "paraphrase",
+      "query": "how do I decide running",
+      "tier": 1,
+      "trigger_text": "decide who is running this"
+    },
+    {
+      "body_text": "triage",
+      "expect_answer": true,
+      "expect_doc": "INC-008",
+      "id": "paraphrase-incident-8",
+      "kind": "paraphrase",
+      "query": "how do I sort many",
+      "tier": 1,
+      "trigger_text": "sort many broken things by urgency"
+    },
+    {
+      "body_text": "handoff",
+      "expect_answer": true,
+      "expect_doc": "INC-009",
+      "id": "paraphrase-incident-9",
+      "kind": "paraphrase",
+      "query": "how do I pass next",
+      "tier": 1,
+      "trigger_text": "pass this to the next shift"
+    },
+    {
+      "body_text": "severity",
+      "expect_answer": true,
+      "expect_doc": "INC-011",
+      "forbid_doc": "INC-001",
+      "id": "discriminate-incident-twin",
+      "kind": "discriminate",
+      "query": "how do I declare finally",
+      "tier": 1,
+      "trigger_text": "declare that it is finally over"
+    },
+    {
+      "body_text": "severity",
+      "expect_answer": true,
+      "expect_doc": "INC-001",
+      "forbid_doc": "INC-011",
+      "id": "discriminate-incident-base",
+      "kind": "discriminate",
+      "query": "how do I work out",
+      "tier": 1,
+      "trigger_text": "work out how bad this is"
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "INC-003",
+      "forbid_doc": "INC-OLD-003",
+      "id": "currency-incident",
+      "kind": "currency",
+      "query": "postmortem step in incident",
+      "tier": 2
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "INC-003",
+      "id": "supersession-incident",
+      "kind": "supersession",
+      "query": "INC-OLD-003",
+      "tier": 2
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "ACC-002",
+      "id": "lookup-access-2",
+      "kind": "lookup",
+      "query": "rotation step in access",
+      "tier": 1
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "ACC-005",
+      "id": "lookup-access-5",
+      "kind": "lookup",
+      "query": "attestation step in access",
+      "tier": 1
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "ACC-009",
+      "id": "lookup-access-9",
+      "kind": "lookup",
+      "query": "assertion step in access",
+      "tier": 1
+    },
+    {
+      "body_text": "rotation",
+      "expect_answer": true,
+      "expect_doc": "ACC-002",
+      "id": "paraphrase-access-2",
+      "kind": "paraphrase",
+      "query": "how do I change secrets",
+      "tier": 1,
+      "trigger_text": "change secrets on a regular cycle"
+    },
+    {
+      "body_text": "attestation",
+      "expect_answer": true,
+      "expect_doc": "ACC-005",
+      "id": "paraphrase-access-5",
+      "kind": "paraphrase",
+      "query": "how do I confirm list",
+      "tier": 1,
+      "trigger_text": "confirm the list is still correct"
+    },
+    {
+      "body_text": "principal",
+      "expect_answer": true,
+      "expect_doc": "ACC-008",
+      "id": "paraphrase-access-8",
+      "kind": "paraphrase",
+      "query": "how do I represent service",
+      "tier": 1,
+      "trigger_text": "represent a service rather than a person"
+    },
+    {
+      "body_text": "assertion",
+      "expect_answer": true,
+      "expect_doc": "ACC-009",
+      "id": "paraphrase-access-9",
+      "kind": "paraphrase",
+      "query": "how do I prove identity",
+      "tier": 1,
+      "trigger_text": "prove identity to another system"
+    },
+    {
+      "body_text": "credential",
+      "expect_answer": true,
+      "expect_doc": "ACC-011",
+      "forbid_doc": "ACC-001",
+      "id": "discriminate-access-twin",
+      "kind": "discriminate",
+      "query": "how do I limit permission",
+      "tier": 1,
+      "trigger_text": "limit permission to one small area"
+    },
+    {
+      "body_text": "credential",
+      "expect_answer": true,
+      "expect_doc": "ACC-001",
+      "forbid_doc": "ACC-011",
+      "id": "discriminate-access-base",
+      "kind": "discriminate",
+      "query": "how do I give new",
+      "tier": 1,
+      "trigger_text": "give a new starter what they need"
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "ACC-003",
+      "forbid_doc": "ACC-OLD-003",
+      "id": "currency-access",
+      "kind": "currency",
+      "query": "revocation step in access",
+      "tier": 2
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "ACC-003",
+      "id": "supersession-access",
+      "kind": "supersession",
+      "query": "ACC-OLD-003",
+      "tier": 2
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "MON-002",
+      "id": "lookup-monitoring-2",
+      "kind": "lookup",
+      "query": "saturation step in monitoring",
+      "tier": 1
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "MON-005",
+      "id": "lookup-monitoring-5",
+      "kind": "lookup",
+      "query": "scrape step in monitoring",
+      "tier": 1
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "MON-009",
+      "id": "lookup-monitoring-9",
+      "kind": "lookup",
+      "query": "aggregation step in monitoring",
+      "tier": 1
+    },
+    {
+      "body_text": "saturation",
+      "expect_answer": true,
+      "expect_doc": "MON-002",
+      "id": "paraphrase-monitoring-2",
+      "kind": "paraphrase",
+      "query": "how do I tell whether",
+      "tier": 1,
+      "trigger_text": "tell whether something is running out of room"
+    },
+    {
+      "body_text": "scrape",
+      "expect_answer": true,
+      "expect_doc": "MON-005",
+      "id": "paraphrase-monitoring-5",
+      "kind": "paraphrase",
+      "query": "how do I collect numbers",
+      "tier": 1,
+      "trigger_text": "collect numbers from somewhere on a timer"
+    },
+    {
+      "body_text": "sampling",
+      "expect_answer": true,
+      "expect_doc": "MON-008",
+      "id": "paraphrase-monitoring-8",
+      "kind": "paraphrase",
+      "query": "how do I keep only",
+      "tier": 1,
+      "trigger_text": "keep only some of the data to save space"
+    },
+    {
+      "body_text": "aggregation",
+      "expect_answer": true,
+      "expect_doc": "MON-009",
+      "id": "paraphrase-monitoring-9",
+      "kind": "paraphrase",
+      "query": "how do I roll many",
+      "tier": 1,
+      "trigger_text": "roll many small numbers into one"
+    },
+    {
+      "body_text": "threshold",
+      "expect_answer": true,
+      "expect_doc": "MON-011",
+      "forbid_doc": "MON-001",
+      "id": "discriminate-monitoring-twin",
+      "kind": "discriminate",
+      "query": "how do I decide long",
+      "tier": 1,
+      "trigger_text": "decide how long to keep old measurements"
+    },
+    {
+      "body_text": "threshold",
+      "expect_answer": true,
+      "expect_doc": "MON-001",
+      "forbid_doc": "MON-011",
+      "id": "discriminate-monitoring-base",
+      "kind": "discriminate",
+      "query": "how do I decide number",
+      "tier": 1,
+      "trigger_text": "decide what number should trigger an alarm"
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "MON-003",
+      "forbid_doc": "MON-OLD-003",
+      "id": "currency-monitoring",
+      "kind": "currency",
+      "query": "quantile step in monitoring",
+      "tier": 2
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "MON-003",
+      "id": "supersession-monitoring",
+      "kind": "supersession",
+      "query": "MON-OLD-003",
+      "tier": 2
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "PRO-002",
+      "id": "lookup-procurement-2",
+      "kind": "lookup",
+      "query": "quotation step in procurement",
+      "tier": 1
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "PRO-005",
+      "id": "lookup-procurement-5",
+      "kind": "lookup",
+      "query": "novation step in procurement",
+      "tier": 1
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "PRO-009",
+      "id": "lookup-procurement-9",
+      "kind": "lookup",
+      "query": "retainer step in procurement",
+      "tier": 1
+    },
+    {
+      "body_text": "quotation",
+      "expect_answer": true,
+      "expect_doc": "PRO-002",
+      "id": "paraphrase-procurement-2",
+      "kind": "paraphrase",
+      "query": "how do I get prices",
+      "tier": 1,
+      "trigger_text": "get prices from more than one place"
+    },
+    {
+      "body_text": "novation",
+      "expect_answer": true,
+      "expect_doc": "PRO-005",
+      "id": "paraphrase-procurement-5",
+      "kind": "paraphrase",
+      "query": "how do I move agreement",
+      "tier": 1,
+      "trigger_text": "move an agreement to a different company"
+    },
+    {
+      "body_text": "milestone",
+      "expect_answer": true,
+      "expect_doc": "PRO-008",
+      "id": "paraphrase-procurement-8",
+      "kind": "paraphrase",
+      "query": "how do I pay only",
+      "tier": 1,
+      "trigger_text": "pay only when a stage is finished"
+    },
+    {
+      "body_text": "retainer",
+      "expect_answer": true,
+      "expect_doc": "PRO-009",
+      "id": "paraphrase-procurement-9",
+      "kind": "paraphrase",
+      "query": "how do I keep somebody",
+      "tier": 1,
+      "trigger_text": "keep somebody available without fixed work"
+    },
+    {
+      "body_text": "requisition",
+      "expect_answer": true,
+      "expect_doc": "PRO-011",
+      "forbid_doc": "PRO-001",
+      "id": "discriminate-procurement-twin",
+      "kind": "discriminate",
+      "query": "how do I alter agreement",
+      "tier": 1,
+      "trigger_text": "alter an agreement already signed"
+    },
+    {
+      "body_text": "requisition",
+      "expect_answer": true,
+      "expect_doc": "PRO-001",
+      "forbid_doc": "PRO-011",
+      "id": "discriminate-procurement-base",
+      "kind": "discriminate",
+      "query": "how do I ask permission",
+      "tier": 1,
+      "trigger_text": "ask for permission to buy something"
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "PRO-003",
+      "forbid_doc": "PRO-OLD-003",
+      "id": "currency-procurement",
+      "kind": "currency",
+      "query": "counterparty step in procurement",
+      "tier": 2
+    },
+    {
+      "expect_answer": true,
+      "expect_doc": "PRO-003",
+      "id": "supersession-procurement",
+      "kind": "supersession",
+      "query": "PRO-OLD-003",
+      "tier": 2
+    },
+    {
+      "expect_answer": true,
+      "expect_spokes": [
+        "deploy",
+        "retention"
+      ],
+      "id": "ambiguity-deploy-retention",
+      "kind": "ambiguity",
+      "query": "promotion and disposal responsibilities",
+      "tier": 2
+    },
+    {
+      "expect_answer": true,
+      "expect_spokes": [
+        "incident",
+        "monitoring"
+      ],
+      "id": "ambiguity-incident-monitoring",
+      "kind": "ambiguity",
+      "query": "severity and threshold responsibilities",
+      "tier": 2
+    },
+    {
+      "expect_answer": true,
+      "expect_spokes": [
+        "access",
+        "procurement"
+      ],
+      "id": "ambiguity-access-procurement",
+      "kind": "ambiguity",
+      "query": "credential and requisition responsibilities",
+      "tier": 2
+    },
+    {
+      "expect_answer": false,
+      "expect_doc": null,
+      "id": "refusal-1",
+      "kind": "refusal",
+      "query": "photosynthesis in coastal mangrove seedlings",
+      "tier": 1
+    },
+    {
+      "expect_answer": false,
+      "expect_doc": null,
+      "id": "refusal-2",
+      "kind": "refusal",
+      "query": "tax treatment of employee stock options",
+      "tier": 1
+    },
+    {
+      "expect_answer": false,
+      "expect_doc": null,
+      "id": "refusal-3",
+      "kind": "refusal",
+      "query": "seismic retrofit standards for masonry chimneys",
+      "tier": 1
+    },
+    {
+      "expect_answer": false,
+      "expect_doc": null,
+      "id": "refusal-4",
+      "kind": "refusal",
+      "query": "dental coverage under the staff benefits plan",
+      "tier": 1
+    },
+    {
+      "expect_answer": false,
+      "expect_doc": null,
+      "id": "refusal-5",
+      "kind": "refusal",
+      "query": "migration routes of arctic terns",
+      "tier": 1
+    },
+    {
+      "expect_answer": false,
+      "expect_doc": null,
+      "id": "refusal-6",
+      "kind": "refusal",
+      "query": "fermentation temperature for saison yeast",
+      "tier": 1
+    },
+    {
+      "expect_answer": false,
+      "expect_doc": null,
+      "id": "refusal-7",
+      "kind": "refusal",
+      "query": "tuning a harpsichord after transport",
+      "tier": 1
+    },
+    {
+      "expect_answer": false,
+      "expect_doc": null,
+      "id": "refusal-8",
+      "kind": "refusal",
+      "query": "diagnosing blight in tomato seedlings",
+      "tier": 1
+    }
+  ],
+  "supersedes": "ablation/v1/probes.json (ceiling error, ledger \u00a75a)"
+}

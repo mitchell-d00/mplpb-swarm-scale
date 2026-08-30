@@ -1,0 +1,2690 @@
+{
+  "A: as-is": [
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-retention-8",
+      "tier": 1,
+      "top": "RET-008"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-procurement-2",
+      "tier": 1,
+      "top": "PRO-002"
+    },
+    {
+      "correct": false,
+      "hits": 2,
+      "kind": "discriminate",
+      "probe": "discriminate-access-twin",
+      "tier": 1,
+      "top": "ACC-010",
+      "wrong_twin": false
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "discriminate",
+      "probe": "discriminate-incident-twin",
+      "tier": 1,
+      "top": "INC-011",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-procurement-9",
+      "tier": 1,
+      "top": "PRO-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-retention-2",
+      "tier": 1,
+      "top": "RET-002"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-procurement",
+      "tier": 2,
+      "top": "PRO-003"
+    },
+    {
+      "correct": true,
+      "hits": 3,
+      "kind": "currency",
+      "probe": "currency-access",
+      "tier": 2,
+      "top": "ACC-003"
+    },
+    {
+      "correct": false,
+      "hits": 2,
+      "kind": "discriminate",
+      "probe": "discriminate-deploy-twin",
+      "tier": 1,
+      "top": "DEP-010",
+      "wrong_twin": false
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-2",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-deploy-5",
+      "tier": 1,
+      "top": "DEP-005"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "ambiguity",
+      "probe": "ambiguity-access-procurement",
+      "tier": 2,
+      "top": "PRO-INDEX-000"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-monitoring-2",
+      "tier": 1,
+      "top": "MON-002"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 3,
+      "kind": "lookup",
+      "probe": "lookup-retention-2",
+      "tier": 1,
+      "top": "RET-002"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-incident-9",
+      "tier": 1,
+      "top": "INC-009"
+    },
+    {
+      "correct": true,
+      "hits": 1,
+      "kind": "discriminate",
+      "probe": "discriminate-monitoring-base",
+      "tier": 1,
+      "top": "MON-001",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-procurement-9",
+      "tier": 1,
+      "top": "PRO-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-incident-8",
+      "tier": 1,
+      "top": "INC-008"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-retention-5",
+      "tier": 1,
+      "top": "RET-005"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-access",
+      "tier": 2,
+      "top": "ACC-003"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "ambiguity",
+      "probe": "ambiguity-incident-monitoring",
+      "tier": 2,
+      "top": "INC-INDEX-000"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-6",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-deploy-8",
+      "tier": 1,
+      "top": "DEP-008"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-3",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": true,
+      "hits": 1,
+      "kind": "discriminate",
+      "probe": "discriminate-procurement-base",
+      "tier": 1,
+      "top": "PRO-001",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-incident-9",
+      "tier": 1,
+      "top": "INC-009"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-deploy",
+      "tier": 2,
+      "top": "DEP-003"
+    },
+    {
+      "correct": false,
+      "hits": 5,
+      "kind": "refusal",
+      "probe": "refusal-4",
+      "tier": 1,
+      "top": "DEP-001"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-retention",
+      "tier": 2,
+      "top": "RET-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-access-2",
+      "tier": 1,
+      "top": "ACC-002"
+    },
+    {
+      "at3": true,
+      "correct": false,
+      "hits": 3,
+      "kind": "paraphrase",
+      "probe": "paraphrase-monitoring-8",
+      "tier": 1,
+      "top": "RET-010"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 3,
+      "kind": "lookup",
+      "probe": "lookup-monitoring-5",
+      "tier": 1,
+      "top": "MON-005"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-8",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-access-8",
+      "tier": 1,
+      "top": "ACC-008"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-incident",
+      "tier": 2,
+      "top": "INC-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-procurement-2",
+      "tier": 1,
+      "top": "PRO-002"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-access-5",
+      "tier": 1,
+      "top": "ACC-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-monitoring-9",
+      "tier": 1,
+      "top": "MON-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-access-9",
+      "tier": 1,
+      "top": "ACC-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-access-5",
+      "tier": 1,
+      "top": "ACC-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-deploy-9",
+      "tier": 1,
+      "top": "DEP-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-incident-5",
+      "tier": 1,
+      "top": "INC-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-incident-5",
+      "tier": 1,
+      "top": "INC-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "lookup",
+      "probe": "lookup-retention-5",
+      "tier": 1,
+      "top": "RET-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-retention-9",
+      "tier": 1,
+      "top": "RET-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-deploy-5",
+      "tier": 1,
+      "top": "DEP-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-access-9",
+      "tier": 1,
+      "top": "ACC-009"
+    },
+    {
+      "correct": false,
+      "hits": 2,
+      "kind": "refusal",
+      "probe": "refusal-7",
+      "tier": 1,
+      "top": "ACC-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-monitoring-2",
+      "tier": 1,
+      "top": "MON-002"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-deploy",
+      "tier": 2,
+      "top": "DEP-003"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "discriminate",
+      "probe": "discriminate-monitoring-twin",
+      "tier": 1,
+      "top": "MON-011",
+      "wrong_twin": false
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-monitoring",
+      "tier": 2,
+      "top": "MON-003"
+    },
+    {
+      "correct": true,
+      "hits": 1,
+      "kind": "discriminate",
+      "probe": "discriminate-deploy-base",
+      "tier": 1,
+      "top": "DEP-001",
+      "wrong_twin": false
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-monitoring",
+      "tier": 2,
+      "top": "MON-003"
+    },
+    {
+      "correct": false,
+      "hits": 4,
+      "kind": "discriminate",
+      "probe": "discriminate-incident-base",
+      "tier": 1,
+      "top": "DEP-INDEX-000",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-deploy-9",
+      "tier": 1,
+      "top": "DEP-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-procurement-8",
+      "tier": 1,
+      "top": "PRO-008"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-procurement-5",
+      "tier": 1,
+      "top": "PRO-005"
+    },
+    {
+      "correct": false,
+      "hits": 3,
+      "kind": "discriminate",
+      "probe": "discriminate-retention-twin",
+      "tier": 1,
+      "top": "RET-010",
+      "wrong_twin": false
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "discriminate",
+      "probe": "discriminate-procurement-twin",
+      "tier": 1,
+      "top": "PRO-011",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-incident-2",
+      "tier": 1,
+      "top": "INC-002"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-deploy-2",
+      "tier": 1,
+      "top": "DEP-002"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-procurement",
+      "tier": 2,
+      "top": "PRO-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-deploy-2",
+      "tier": 1,
+      "top": "DEP-002"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-monitoring-9",
+      "tier": 1,
+      "top": "MON-009"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-incident",
+      "tier": 2,
+      "top": "INC-003"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-retention",
+      "tier": 2,
+      "top": "RET-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-monitoring-5",
+      "tier": 1,
+      "top": "MON-005"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-5",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": true,
+      "hits": 1,
+      "kind": "discriminate",
+      "probe": "discriminate-retention-base",
+      "tier": 1,
+      "top": "RET-001",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-incident-2",
+      "tier": 1,
+      "top": "INC-002"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "ambiguity",
+      "probe": "ambiguity-deploy-retention",
+      "tier": 2,
+      "top": "DEP-INDEX-000"
+    },
+    {
+      "correct": true,
+      "hits": 1,
+      "kind": "discriminate",
+      "probe": "discriminate-access-base",
+      "tier": 1,
+      "top": "ACC-001",
+      "wrong_twin": false
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-1",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-access-2",
+      "tier": 1,
+      "top": "ACC-002"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 3,
+      "kind": "lookup",
+      "probe": "lookup-retention-9",
+      "tier": 1,
+      "top": "RET-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-procurement-5",
+      "tier": 1,
+      "top": "PRO-005"
+    }
+  ],
+  "B: minus navigation": [
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-retention",
+      "tier": 2,
+      "top": "RET-003"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-2",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": false,
+      "hits": 2,
+      "kind": "discriminate",
+      "probe": "discriminate-deploy-twin",
+      "tier": 1,
+      "top": "DEP-010",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-procurement-9",
+      "tier": 1,
+      "top": "PRO-009"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-5",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-retention-2",
+      "tier": 1,
+      "top": "RET-002"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-procurement-2",
+      "tier": 1,
+      "top": "PRO-002"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-retention-9",
+      "tier": 1,
+      "top": "RET-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-procurement-9",
+      "tier": 1,
+      "top": "PRO-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 3,
+      "kind": "lookup",
+      "probe": "lookup-retention-9",
+      "tier": 1,
+      "top": "RET-009"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-3",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "discriminate",
+      "probe": "discriminate-monitoring-twin",
+      "tier": 1,
+      "top": "MON-011",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-incident-9",
+      "tier": 1,
+      "top": "INC-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-incident-5",
+      "tier": 1,
+      "top": "INC-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-incident-9",
+      "tier": 1,
+      "top": "INC-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-incident-8",
+      "tier": 1,
+      "top": "INC-008"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-monitoring-2",
+      "tier": 1,
+      "top": "MON-002"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-procurement-5",
+      "tier": 1,
+      "top": "PRO-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-monitoring-9",
+      "tier": 1,
+      "top": "MON-009"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-retention",
+      "tier": 2,
+      "top": "RET-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-procurement-8",
+      "tier": 1,
+      "top": "PRO-008"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-monitoring-5",
+      "tier": 1,
+      "top": "MON-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-access-5",
+      "tier": 1,
+      "top": "ACC-005"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-procurement",
+      "tier": 2,
+      "top": "PRO-003"
+    },
+    {
+      "correct": true,
+      "hits": 1,
+      "kind": "discriminate",
+      "probe": "discriminate-procurement-base",
+      "tier": 1,
+      "top": "PRO-001",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "lookup",
+      "probe": "lookup-retention-5",
+      "tier": 1,
+      "top": "RET-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 3,
+      "kind": "lookup",
+      "probe": "lookup-monitoring-5",
+      "tier": 1,
+      "top": "MON-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 3,
+      "kind": "lookup",
+      "probe": "lookup-retention-2",
+      "tier": 1,
+      "top": "RET-002"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-monitoring",
+      "tier": 2,
+      "top": "MON-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-incident-2",
+      "tier": 1,
+      "top": "INC-002"
+    },
+    {
+      "correct": false,
+      "hits": 5,
+      "kind": "refusal",
+      "probe": "refusal-4",
+      "tier": 1,
+      "top": "DEP-001"
+    },
+    {
+      "correct": true,
+      "hits": 1,
+      "kind": "discriminate",
+      "probe": "discriminate-deploy-base",
+      "tier": 1,
+      "top": "DEP-001",
+      "wrong_twin": false
+    },
+    {
+      "correct": true,
+      "hits": 1,
+      "kind": "discriminate",
+      "probe": "discriminate-access-base",
+      "tier": 1,
+      "top": "ACC-001",
+      "wrong_twin": false
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "discriminate",
+      "probe": "discriminate-incident-base",
+      "tier": 1,
+      "top": "INC-001",
+      "wrong_twin": false
+    },
+    {
+      "correct": false,
+      "hits": 2,
+      "kind": "refusal",
+      "probe": "refusal-7",
+      "tier": 1,
+      "top": "ACC-003"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-6",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-procurement-2",
+      "tier": 1,
+      "top": "PRO-002"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "ambiguity",
+      "probe": "ambiguity-deploy-retention",
+      "tier": 2,
+      "top": "DEP-001"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-access-2",
+      "tier": 1,
+      "top": "ACC-002"
+    },
+    {
+      "correct": true,
+      "hits": 1,
+      "kind": "discriminate",
+      "probe": "discriminate-retention-base",
+      "tier": 1,
+      "top": "RET-001",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-incident-2",
+      "tier": 1,
+      "top": "INC-002"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "discriminate",
+      "probe": "discriminate-incident-twin",
+      "tier": 1,
+      "top": "INC-011",
+      "wrong_twin": false
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-monitoring",
+      "tier": 2,
+      "top": "MON-003"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "ambiguity",
+      "probe": "ambiguity-access-procurement",
+      "tier": 2,
+      "top": "PRO-001"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-access-5",
+      "tier": 1,
+      "top": "ACC-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-deploy-8",
+      "tier": 1,
+      "top": "DEP-008"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-deploy-9",
+      "tier": 1,
+      "top": "DEP-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-access-9",
+      "tier": 1,
+      "top": "ACC-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-deploy-5",
+      "tier": 1,
+      "top": "DEP-005"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-deploy",
+      "tier": 2,
+      "top": "DEP-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-deploy-2",
+      "tier": 1,
+      "top": "DEP-002"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-procurement",
+      "tier": 2,
+      "top": "PRO-003"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-access",
+      "tier": 2,
+      "top": "ACC-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-monitoring-2",
+      "tier": 1,
+      "top": "MON-002"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "ambiguity",
+      "probe": "ambiguity-incident-monitoring",
+      "tier": 2,
+      "top": "INC-001"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-deploy-5",
+      "tier": 1,
+      "top": "DEP-005"
+    },
+    {
+      "correct": true,
+      "hits": 1,
+      "kind": "discriminate",
+      "probe": "discriminate-monitoring-base",
+      "tier": 1,
+      "top": "MON-001",
+      "wrong_twin": false
+    },
+    {
+      "correct": true,
+      "hits": 3,
+      "kind": "currency",
+      "probe": "currency-access",
+      "tier": 2,
+      "top": "ACC-003"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-incident",
+      "tier": 2,
+      "top": "INC-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-access-2",
+      "tier": 1,
+      "top": "ACC-002"
+    },
+    {
+      "at3": true,
+      "correct": false,
+      "hits": 3,
+      "kind": "paraphrase",
+      "probe": "paraphrase-monitoring-8",
+      "tier": 1,
+      "top": "RET-010"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-monitoring-9",
+      "tier": 1,
+      "top": "MON-009"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-1",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-retention-5",
+      "tier": 1,
+      "top": "RET-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-access-8",
+      "tier": 1,
+      "top": "ACC-008"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-deploy",
+      "tier": 2,
+      "top": "DEP-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-retention-8",
+      "tier": 1,
+      "top": "RET-008"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-procurement-5",
+      "tier": 1,
+      "top": "PRO-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-deploy-9",
+      "tier": 1,
+      "top": "DEP-009"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-8",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-incident",
+      "tier": 2,
+      "top": "INC-003"
+    },
+    {
+      "correct": false,
+      "hits": 3,
+      "kind": "discriminate",
+      "probe": "discriminate-retention-twin",
+      "tier": 1,
+      "top": "RET-010",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-access-9",
+      "tier": 1,
+      "top": "ACC-009"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "discriminate",
+      "probe": "discriminate-procurement-twin",
+      "tier": 1,
+      "top": "PRO-011",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-incident-5",
+      "tier": 1,
+      "top": "INC-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-deploy-2",
+      "tier": 1,
+      "top": "DEP-002"
+    },
+    {
+      "correct": false,
+      "hits": 2,
+      "kind": "discriminate",
+      "probe": "discriminate-access-twin",
+      "tier": 1,
+      "top": "ACC-010",
+      "wrong_twin": false
+    }
+  ],
+  "C: B + prose fallback": [
+    {
+      "correct": false,
+      "hits": 2,
+      "kind": "discriminate",
+      "probe": "discriminate-deploy-twin",
+      "tier": 1,
+      "top": "DEP-010",
+      "wrong_twin": false
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-procurement",
+      "tier": 2,
+      "top": "PRO-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-deploy-9",
+      "tier": 1,
+      "top": "DEP-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-incident-2",
+      "tier": 1,
+      "top": "INC-002"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-incident",
+      "tier": 2,
+      "top": "INC-003"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-1",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-access-5",
+      "tier": 1,
+      "top": "ACC-005"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-2",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-deploy-8",
+      "tier": 1,
+      "top": "DEP-008"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-monitoring",
+      "tier": 2,
+      "top": "MON-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-monitoring-9",
+      "tier": 1,
+      "top": "MON-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 3,
+      "kind": "lookup",
+      "probe": "lookup-monitoring-5",
+      "tier": 1,
+      "top": "MON-005"
+    },
+    {
+      "correct": true,
+      "hits": 1,
+      "kind": "discriminate",
+      "probe": "discriminate-monitoring-base",
+      "tier": 1,
+      "top": "MON-001",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-monitoring-2",
+      "tier": 1,
+      "top": "MON-002"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-7",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-monitoring",
+      "tier": 2,
+      "top": "MON-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-procurement-9",
+      "tier": 1,
+      "top": "PRO-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-procurement-2",
+      "tier": 1,
+      "top": "PRO-002"
+    },
+    {
+      "correct": true,
+      "hits": 1,
+      "kind": "discriminate",
+      "probe": "discriminate-retention-base",
+      "tier": 1,
+      "top": "RET-001",
+      "wrong_twin": false
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "ambiguity",
+      "probe": "ambiguity-incident-monitoring",
+      "tier": 2,
+      "top": "INC-001"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-8",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-deploy-5",
+      "tier": 1,
+      "top": "DEP-005"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-deploy",
+      "tier": 2,
+      "top": "DEP-003"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "discriminate",
+      "probe": "discriminate-procurement-twin",
+      "tier": 1,
+      "top": "PRO-011",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-procurement-5",
+      "tier": 1,
+      "top": "PRO-005"
+    },
+    {
+      "correct": true,
+      "hits": 1,
+      "kind": "discriminate",
+      "probe": "discriminate-access-base",
+      "tier": 1,
+      "top": "ACC-001",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 3,
+      "kind": "lookup",
+      "probe": "lookup-retention-2",
+      "tier": 1,
+      "top": "RET-002"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "ambiguity",
+      "probe": "ambiguity-access-procurement",
+      "tier": 2,
+      "top": "PRO-001"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-incident-8",
+      "tier": 1,
+      "top": "INC-008"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-retention-2",
+      "tier": 1,
+      "top": "RET-002"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-procurement-9",
+      "tier": 1,
+      "top": "PRO-009"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-6",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "discriminate",
+      "probe": "discriminate-incident-base",
+      "tier": 1,
+      "top": "INC-001",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-deploy-2",
+      "tier": 1,
+      "top": "DEP-002"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-access-9",
+      "tier": 1,
+      "top": "ACC-009"
+    },
+    {
+      "correct": false,
+      "hits": 2,
+      "kind": "discriminate",
+      "probe": "discriminate-access-twin",
+      "tier": 1,
+      "top": "ACC-010",
+      "wrong_twin": false
+    },
+    {
+      "correct": true,
+      "hits": 1,
+      "kind": "discriminate",
+      "probe": "discriminate-procurement-base",
+      "tier": 1,
+      "top": "PRO-001",
+      "wrong_twin": false
+    },
+    {
+      "correct": true,
+      "hits": 3,
+      "kind": "currency",
+      "probe": "currency-access",
+      "tier": 2,
+      "top": "ACC-003"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-access",
+      "tier": 2,
+      "top": "ACC-003"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "discriminate",
+      "probe": "discriminate-incident-twin",
+      "tier": 1,
+      "top": "INC-011",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-incident-5",
+      "tier": 1,
+      "top": "INC-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-monitoring-5",
+      "tier": 1,
+      "top": "MON-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-incident-9",
+      "tier": 1,
+      "top": "INC-009"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-deploy",
+      "tier": 2,
+      "top": "DEP-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-access-5",
+      "tier": 1,
+      "top": "ACC-005"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "discriminate",
+      "probe": "discriminate-monitoring-twin",
+      "tier": 1,
+      "top": "MON-011",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-monitoring-9",
+      "tier": 1,
+      "top": "MON-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "lookup",
+      "probe": "lookup-retention-5",
+      "tier": 1,
+      "top": "RET-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-incident-9",
+      "tier": 1,
+      "top": "INC-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-retention-5",
+      "tier": 1,
+      "top": "RET-005"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-3",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-procurement-5",
+      "tier": 1,
+      "top": "PRO-005"
+    },
+    {
+      "at3": true,
+      "correct": false,
+      "hits": 3,
+      "kind": "paraphrase",
+      "probe": "paraphrase-monitoring-8",
+      "tier": 1,
+      "top": "RET-010"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-procurement-8",
+      "tier": 1,
+      "top": "PRO-008"
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-retention",
+      "tier": 2,
+      "top": "RET-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-incident-2",
+      "tier": 1,
+      "top": "INC-002"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-monitoring-2",
+      "tier": 1,
+      "top": "MON-002"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-access-9",
+      "tier": 1,
+      "top": "ACC-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-access-2",
+      "tier": 1,
+      "top": "ACC-002"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-deploy-2",
+      "tier": 1,
+      "top": "DEP-002"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-retention",
+      "tier": 2,
+      "top": "RET-003"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-4",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 3,
+      "kind": "lookup",
+      "probe": "lookup-retention-9",
+      "tier": 1,
+      "top": "RET-009"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-5",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-procurement-2",
+      "tier": 1,
+      "top": "PRO-002"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-deploy-9",
+      "tier": 1,
+      "top": "DEP-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-incident-5",
+      "tier": 1,
+      "top": "INC-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-access-2",
+      "tier": 1,
+      "top": "ACC-002"
+    },
+    {
+      "correct": false,
+      "hits": 3,
+      "kind": "discriminate",
+      "probe": "discriminate-retention-twin",
+      "tier": 1,
+      "top": "RET-010",
+      "wrong_twin": false
+    },
+    {
+      "correct": true,
+      "hits": 2,
+      "kind": "supersession",
+      "probe": "supersession-incident",
+      "tier": 2,
+      "top": "INC-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-deploy-5",
+      "tier": 1,
+      "top": "DEP-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-retention-9",
+      "tier": 1,
+      "top": "RET-009"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-retention-8",
+      "tier": 1,
+      "top": "RET-008"
+    },
+    {
+      "correct": true,
+      "hits": 1,
+      "kind": "discriminate",
+      "probe": "discriminate-deploy-base",
+      "tier": 1,
+      "top": "DEP-001",
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "paraphrase",
+      "probe": "paraphrase-access-8",
+      "tier": 1,
+      "top": "ACC-008"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-procurement",
+      "tier": 2,
+      "top": "PRO-003"
+    },
+    {
+      "correct": true,
+      "hits": 5,
+      "kind": "ambiguity",
+      "probe": "ambiguity-deploy-retention",
+      "tier": 2,
+      "top": "DEP-001"
+    }
+  ],
+  "stripped": [
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "discriminate",
+      "probe": "discriminate-deploy-base",
+      "tier": 1,
+      "top": null,
+      "wrong_twin": false
+    },
+    {
+      "correct": false,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-retention",
+      "tier": 2,
+      "top": "RET-OLD-003"
+    },
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "supersession",
+      "probe": "supersession-access",
+      "tier": 2,
+      "top": null
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-incident-8",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-incident-2",
+      "tier": 1,
+      "top": "INC-002"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-access-2",
+      "tier": 1,
+      "top": "ACC-002"
+    },
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "discriminate",
+      "probe": "discriminate-monitoring-base",
+      "tier": 1,
+      "top": null,
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 3,
+      "kind": "lookup",
+      "probe": "lookup-retention-9",
+      "tier": 1,
+      "top": "RET-009"
+    },
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "discriminate",
+      "probe": "discriminate-access-base",
+      "tier": 1,
+      "top": null,
+      "wrong_twin": false
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-retention-8",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-monitoring-9",
+      "tier": 1,
+      "top": "MON-009"
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-retention-2",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-6",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": false,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-procurement",
+      "tier": 2,
+      "top": "PRO-OLD-003"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-procurement-9",
+      "tier": 1,
+      "top": "PRO-009"
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-incident-9",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "supersession",
+      "probe": "supersession-procurement",
+      "tier": 2,
+      "top": null
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-retention-5",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-access-9",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "supersession",
+      "probe": "supersession-deploy",
+      "tier": 2,
+      "top": null
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-monitoring-8",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": false,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-incident",
+      "tier": 2,
+      "top": "INC-OLD-003"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-8",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-procurement-2",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-deploy-2",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-procurement-9",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 1,
+      "kind": "lookup",
+      "probe": "lookup-retention-5",
+      "tier": 1,
+      "top": "RET-005"
+    },
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "supersession",
+      "probe": "supersession-incident",
+      "tier": 2,
+      "top": null
+    },
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "discriminate",
+      "probe": "discriminate-procurement-twin",
+      "tier": 1,
+      "top": null,
+      "wrong_twin": false
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-deploy-9",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": false,
+      "hits": 5,
+      "kind": "ambiguity",
+      "probe": "ambiguity-deploy-retention",
+      "tier": 2,
+      "top": "DEP-001"
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-monitoring-2",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-access-5",
+      "tier": 1,
+      "top": "ACC-005"
+    },
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "discriminate",
+      "probe": "discriminate-retention-base",
+      "tier": 1,
+      "top": null,
+      "wrong_twin": false
+    },
+    {
+      "correct": false,
+      "hits": 3,
+      "kind": "currency",
+      "probe": "currency-access",
+      "tier": 2,
+      "top": "ACC-OLD-003"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-2",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-deploy-2",
+      "tier": 1,
+      "top": "DEP-002"
+    },
+    {
+      "correct": false,
+      "hits": 5,
+      "kind": "ambiguity",
+      "probe": "ambiguity-incident-monitoring",
+      "tier": 2,
+      "top": "INC-001"
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-incident-2",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": false,
+      "hits": 5,
+      "kind": "ambiguity",
+      "probe": "ambiguity-access-procurement",
+      "tier": 2,
+      "top": "PRO-001"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 3,
+      "kind": "lookup",
+      "probe": "lookup-monitoring-5",
+      "tier": 1,
+      "top": "MON-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 3,
+      "kind": "lookup",
+      "probe": "lookup-retention-2",
+      "tier": 1,
+      "top": "RET-002"
+    },
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "discriminate",
+      "probe": "discriminate-access-twin",
+      "tier": 1,
+      "top": null,
+      "wrong_twin": false
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-incident-5",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "supersession",
+      "probe": "supersession-monitoring",
+      "tier": 2,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-deploy-5",
+      "tier": 1,
+      "top": "DEP-005"
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-procurement-8",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-monitoring-9",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-access-2",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-4",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "discriminate",
+      "probe": "discriminate-retention-twin",
+      "tier": 1,
+      "top": null,
+      "wrong_twin": false
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-deploy-8",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-incident-9",
+      "tier": 1,
+      "top": "INC-009"
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-monitoring-5",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-access-9",
+      "tier": 1,
+      "top": "ACC-009"
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-5",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-procurement-5",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-procurement-2",
+      "tier": 1,
+      "top": "PRO-002"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-deploy-9",
+      "tier": 1,
+      "top": "DEP-009"
+    },
+    {
+      "correct": false,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-monitoring",
+      "tier": 2,
+      "top": "MON-OLD-003"
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-access-8",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": false,
+      "hits": 5,
+      "kind": "currency",
+      "probe": "currency-deploy",
+      "tier": 2,
+      "top": "DEP-OLD-003"
+    },
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "discriminate",
+      "probe": "discriminate-monitoring-twin",
+      "tier": 1,
+      "top": null,
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-procurement-5",
+      "tier": 1,
+      "top": "PRO-005"
+    },
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "discriminate",
+      "probe": "discriminate-procurement-base",
+      "tier": 1,
+      "top": null,
+      "wrong_twin": false
+    },
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "discriminate",
+      "probe": "discriminate-incident-base",
+      "tier": 1,
+      "top": null,
+      "wrong_twin": false
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 5,
+      "kind": "lookup",
+      "probe": "lookup-incident-5",
+      "tier": 1,
+      "top": "INC-005"
+    },
+    {
+      "at3": true,
+      "correct": true,
+      "hits": 4,
+      "kind": "lookup",
+      "probe": "lookup-monitoring-2",
+      "tier": 1,
+      "top": "MON-002"
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-retention-9",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-access-5",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "supersession",
+      "probe": "supersession-retention",
+      "tier": 2,
+      "top": null
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-7",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-3",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": true,
+      "hits": 0,
+      "kind": "refusal",
+      "probe": "refusal-1",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "at3": false,
+      "correct": false,
+      "hits": 0,
+      "kind": "paraphrase",
+      "probe": "paraphrase-deploy-5",
+      "tier": 1,
+      "top": null
+    },
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "discriminate",
+      "probe": "discriminate-incident-twin",
+      "tier": 1,
+      "top": null,
+      "wrong_twin": false
+    },
+    {
+      "correct": false,
+      "hits": 0,
+      "kind": "discriminate",
+      "probe": "discriminate-deploy-twin",
+      "tier": 1,
+      "top": null,
+      "wrong_twin": false
+    }
+  ]
+}
